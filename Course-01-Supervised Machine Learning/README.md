@@ -30,3 +30,18 @@ image of phone | defect?(0/1) | visual inspection
 * Here we gather data about houses and plot their size against their prices.
 * Then we try to fit a line or a curve (based on a more complicated function) to the data point.
 * Then we can predict the price of a house with size not in our training dataset.
+
+### Classification
+* In **Classification**, the algorithm tries use the input to predict the output _class_ or _category_ out of small number of possible classes/categories.
+    * This is different from [Regression](#regression) which tries to predict any number of infinitely many possible numbers.
+![Classification: breast cancer detection](./images/classification-01.jpg)
+* In Classification, the terms output **Class** or **Category** are often used interchangeably.
+* Classification algorithms predict categories.
+* Categories don't have to be numbers.
+
+#### Example
+When ploting the data of breast cancer (_Age_ & _Tumor size_ vs _Tumor Type_)
+![Classification: breast cancer detection - 2 Inputs](./images/classification-02.jpg)
+* We use circles to represent patients with benign tumor and corsses to represent patients with malignant tumor.
+* So when a new patient comes in, the doctor measures the tumor size and record the age.
+* Given a dataset like this, the learning algorithm tries to find some boundry that seperates the malignant tumors from the benign ones. So the learning algorithm has to decide how to fit a boundry line between that classify the data.
