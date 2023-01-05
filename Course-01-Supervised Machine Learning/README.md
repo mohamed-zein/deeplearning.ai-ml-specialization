@@ -45,3 +45,16 @@ When ploting the data of breast cancer (_Age_ & _Tumor size_ vs _Tumor Type_)
 * We use circles to represent patients with benign tumor and corsses to represent patients with malignant tumor.
 * So when a new patient comes in, the doctor measures the tumor size and record the age.
 * Given a dataset like this, the learning algorithm tries to find some boundry that seperates the malignant tumors from the benign ones. So the learning algorithm has to decide how to fit a boundry line between that classify the data.
+
+## Unsupervised learning
+* Unsupervised learning deals with data that is NOT associated with any output label `y`.
+* Unsupervised learning is used to find any structure, pattern or something interesting in the data.
+* We call it **Unsupervised learning** because we're not trying to supervise the algorithm to give some **right answer** for every input.
+* Instead, we are asking the algorithm to figure out all by itself what's interesting or what pattern, structure that might be in this data.
+### Clustering
+* This is a type of [Unsupervised learning](#unsupervised-learning).
+* It places the unlabeled data into different clusters.
+* Clustering is used in many applications. As examples:
+    * [Google News](https://news.google.com/): It goes through hudereds of thousands of news articles on the internet and groups related stories together.
+    * [DNA microarray](https://en.wikipedia.org/wiki/DNA_microarray)
+    * Grouping customers
