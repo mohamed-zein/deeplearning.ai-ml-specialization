@@ -48,9 +48,15 @@ When ploting the data of breast cancer (_Age_ & _Tumor size_ vs _Tumor Type_)
 
 ## Unsupervised learning
 * Unsupervised learning deals with data that is NOT associated with any output label `y`.
+    * Data only comes with inputs `X`, but not output labels `Y`.
 * Unsupervised learning is used to find any structure, pattern or something interesting in the data.
+    * Algorithm has to find **structure/pattern** in the data.
 * We call it **Unsupervised learning** because we're not trying to supervise the algorithm to give some **right answer** for every input.
 * Instead, we are asking the algorithm to figure out all by itself what's interesting or what pattern, structure that might be in this data.
+* Some types of Unsupervised learning algorithms:
+    * [**Clustering**](#clustering): Group similar data points together.
+    * **Anomaly detection**: which is used to detect unusual data points. This is useful for Fraud detection and many other applications.
+    * **Dimensionality reduction**: Compress data using fewer numbers while losing as little information as possible.
 ### Clustering
 * This is a type of [Unsupervised learning](#unsupervised-learning).
 * It places the unlabeled data into different clusters.
