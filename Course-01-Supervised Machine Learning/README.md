@@ -107,3 +107,46 @@ $$
     * One input varibale also can be called **Univariate** linear regression.
 
 [JupyterLab example](./code/C1_W1_Lab02_Model_Representation_Soln.ipynb)
+
+## Cost Function
+* In order to implement [Linear Regression](#regression-model), the first key step is to define **Cost Function**.
+* The **Cost Function** will tell us how well the model is doing.
+* Consider we have a training set (**features** and **targets**) so the Linear Regression model will be:
+
+$$
+\begin{split}
+\text{Model: } f_{w,b} = wx + b \\
+w,b: & \text{parameters} \\
+& \text{coefficients} \\
+& \text{weights}
+\end{split}
+$$
+
+* In machine learning, **parameters** of the model are the variables you can adjust during training in order to improve the model.
+* Sometimes **parameters** $w$ and $b$ are referred to as **coefficients** or **weights**.
+* With Linear Regression, we want to choose values for the parameters $w$ and $b$ so the straight line you get from the function $f$ somehow fits the data well.
+![Cost Function](./images/cost-function-01.jpg)
+
+$$
+\begin{split}
+\hat{y}^{(i)} & = f_{w,b}\left(x^{(i)}\right) \\
+f_{w,b}\left(x^{(i)}\right) & = wx^{(i)} + b
+\end{split}
+$$
+
+* The objective is to find $w,b$ so that $\hat{y}^{(i)}$ is close to $y^{(i)}$ for all $\left(x^{(i)}, y^{(i)}\right)$.
+    * We first need to measure how well a line fits the training data.
+    * So we need to construct a **Cost Function**.
+    * Below is the formula of **Cost Function**: squared error cost function.
+
+$$
+\begin{split}
+J(w,b) & = \frac{1}{2m} \sum_{i=1}^{m}\left(\underbrace{\hat{y}^{(i)} - y^{(i)}}_\text{error} \right)^{2} \\
+& m = \text{number of training examples} \\
+J(w,b) & = \frac{1}{2m} \sum_{i=1}^{m} \left(f_{w,b} \left(x^{(i)}\right) - y^{(i)}\right)^{2}
+\end{split}
+$$
+
+* In machine learning, different people will use different cost functions for different applications.
+* Squared error cost function is by far the most commonly used one for linear regression and also all regression problems.
+* Eventually we want to find values of $w$ and $b$ that makes the cost function small.
