@@ -105,3 +105,5 @@ $$
 * Expression $f(x) = wx + b$ is Linear Regression with **one variable**.
     * **One variable** means that there's a single input variable or feature $x$.
     * One input varibale also can be called **Univariate** linear regression.
+
+[JupyterLab example](./code/C1_W1_Lab02_Model_Representation_Soln.ipynb)
