@@ -29,7 +29,8 @@
 				"ms-python.python",
 				"GitHub.vscode-pull-request-github",
 				"VisualStudioExptTeam.vscodeintellicode",
-				"VisualStudioExptTeam.intellicode-api-usage-examples"
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"mdickin.markdown-shortcuts"
 			]
 		}
 	},
