@@ -64,3 +64,44 @@ When ploting the data of breast cancer (_Age_ & _Tumor size_ vs _Tumor Type_)
     * [Google News](https://news.google.com/): It goes through hudereds of thousands of news articles on the internet and groups related stories together.
     * [DNA microarray](https://en.wikipedia.org/wiki/DNA_microarray)
     * Grouping customers
+## Regression Model
+### Terminology
+* **Training Set**: Data used to train the model.
+    * Notation:
+   $$
+   \begin{split}
+   x = & \text{ "input" variable} \\
+   & \text{ "feature" variable} \\
+   y = & \text{ "output" variable} \\
+   & \text{ "target" variable} \\
+   m = & \text{ number of training examples} \\
+   (x, y) = & \text{ single training example} \\
+   (x^{(i)}, y^{(i)}) = & i^{th} \text{ training example} \\
+   & (1^{\text{st}}, 2^{\text{nd}}, 3^{\text{rd}} \dots)
+   \end{split}
+   $$
+
+* **Training set** in Supervised Learning includes both
+    * Input **features**.
+    * Output **targets**.
+* To train the model you feed the **Training set** (**features** and **targets**) to you the **Supervised Learnig Algorithm**.
+* The **Supervised Learnig Algorithm** will produce some **function** $f$. Historically it used to be called _hypothesis_ but will stick to calling it a **function**.
+* Function $f$ then takes new input $x$ and output and _estimate_ or _prdiction_ which we call it $\hat{y} \quad \text{"y-hat"}$.
+* $\hat{y}$ is the estimate or prediction for $y$.
+* Function $f$ is called the **model**.
+* When using symbol $y$, this refers to the **target** which is the actual true value in the training set.
+* $\hat{y}$ refers to the estimate. It may or may not be the actual true value.
+### How to represent $f$ ?
+* Assuming $f$ is a straight line, so our function can be written as:
+
+$$
+f_{w,b}(x) = wx + b \qquad \text{Where } w \text{ and } b \text{ are numbers}
+$$
+
+* The values of $w$ and $b$ will determine the prediction $\hat{y}$ based on the input feature $x$.
+* The expression $f(x) = wx + b$ is a linear function so the training algorithm is trying to fit a line to our data.
+* In more complex scenario, we might want to fit a curve (non-linear function).
+* Linear algorithm that generates a linear function is called **Linear Regression** with one variable.
+* Expression $f(x) = wx + b$ is Linear Regression with **one variable**.
+    * **One variable** means that there's a single input variable or feature $x$.
+    * One input varibale also can be called **Univariate** linear regression.
