@@ -124,7 +124,7 @@ $$
 
 * In machine learning, **parameters** of the model are the variables you can adjust during training in order to improve the model.
 * Sometimes **parameters** $w$ and $b$ are referred to as **coefficients** or **weights**.
-* With Linear Regression, we want to choose values for the parameters $w$ and $b$ so the straight line you get from the function $f$ somehow fits the data well.
+* With Linear Regression, we want to choose values for the parameters $w$ and $b$ so the straight line you get from the function $f$ somehow fits the data well.  
 ![Cost Function](./images/cost-function-01.jpg)
 
 $$
