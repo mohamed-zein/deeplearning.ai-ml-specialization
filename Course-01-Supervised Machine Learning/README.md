@@ -141,12 +141,18 @@ $$
 
 $$
 \begin{split}
-J(w,b) & = \frac{1}{2m} \sum_{i=1}^{m}\left(\underbrace{\hat{y}^{(i)} - y^{(i)}}_\text{error} \right)^{2} \\
+J(w,b) & = \frac{1}{2m} \sum\limits_{i=1}^{m}\left(\underbrace{\hat{y}^{(i)} - y^{(i)}}_\text{error} \right)^{2} \\
 & m = \text{number of training examples} \\
-J(w,b) & = \frac{1}{2m} \sum_{i=1}^{m} \left(f_{w,b} \left(x^{(i)}\right) - y^{(i)}\right)^{2}
+J(w,b) & = \frac{1}{2m} \sum\limits_{i=1}^{m} \left(f_{w,b} \left(x^{(i)}\right) - y^{(i)}\right)^{2}
 \end{split}
 $$
 
 * In machine learning, different people will use different cost functions for different applications.
 * Squared error cost function is by far the most commonly used one for linear regression and also all regression problems.
 * Eventually we want to find values of $w$ and $b$ that makes the cost function small.
+
+$$
+\min_{w,b} J(w,b)
+$$
+
+[JupyterLab example](./code/C1_W1_Lab03_Cost_function_Soln.ipynb)
