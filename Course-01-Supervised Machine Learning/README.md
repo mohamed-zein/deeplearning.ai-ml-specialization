@@ -166,7 +166,7 @@ $$
 w = w - \alpha \frac{\partial}{\partial{w}}J(w,b) \\
 b = b - \alpha \frac{\partial}{\partial{b}}J(w,b) 
 \end{aligned}
-\right\}
+\right \rbrace
 \qquad w\text{ and }b\text{ must be updated simultaneously}
 $$
 
