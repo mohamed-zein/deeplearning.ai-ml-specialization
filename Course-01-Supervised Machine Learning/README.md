@@ -209,12 +209,11 @@ $$
 * Gradient descent algorithm
 
 $$
-\begin{split}
-\text{repeat until convergence } & \{ \\
-w & = w - \alpha \frac{\partial}{\partial{w}} J(w,b) \\
-b & = b - \alpha \frac{\partial}{\partial{b}} J(w,b) \\
-\}
-\end{split}
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w &= w -  \alpha \frac{\partial}{\partial w} J(w,b)   \; \newline 
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(w,b) \newline \rbrace
+\end{align*}
 $$
 
 * To calculate the dervitaves $\frac{\partial}{\partial{w}} J(w,b)$ and $\frac{\partial}{\partial{b}} J(w,b)$:
