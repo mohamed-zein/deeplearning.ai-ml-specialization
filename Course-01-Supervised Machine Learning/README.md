@@ -176,6 +176,7 @@ $$
     * If $\alpha$ is very large, then this corresponds to a very aggressive gradient descent procedure. 
 * $\frac{\partial}{\partial{w}}J(w,b)$ is the derivative term of the cost function $J$
     * In combination with the learning rate $\alpha$ it determine the size of the steps.
+* **Important Note**: Gradient descent can find local minimum instead of global minimum.
 
 ## Learning rate
 The choice of the learning rate $\alpha$ will have a huge impact on the efficiency of your implementation of gradient descent. And if alpha, the learning rate is chosen poorly rate of descent may not even work at all.  
@@ -190,3 +191,56 @@ If $\alpha$ is too **large**, Gradient descent may be:
 * Fail to converge, diverge.
 
 ![Learning Rate - Local minimum](./images/learning-rate-03.jpg)
+
+## Gradient descent for linear regression
+We will use the Squared error cost function for the linear regression with gradient descent.
+* Linear regression model
+
+$$
+f_{w,b}(x) = wx + b
+$$
+
+* Cost function 
+
+$$
+J(w,b) = \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(f_{w,b}\left(x^{(i)}\right) - y^{(i)}\right)^{2}}
+$$
+
+* Gradient descent algorithm
+
+$$
+\begin{split}
+\text{repeat until convergence } & \{ \\
+w & = w - \alpha \frac{\partial}{\partial{w}} J(w,b) \\
+b & = b - \alpha \frac{\partial}{\partial{b}} J(w,b) \\
+\}
+\end{split}
+$$
+
+* To calculate the dervitaves $\frac{\partial}{\partial{w}} J(w,b)$ and $\frac{\partial}{\partial{b}} J(w,b)$:
+
+$$
+\begin{split}
+\frac{\partial}{\partial{w}} J(w,b) & = \frac{\partial}{\partial{w}} \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(f_{w,b}\left(x^{(i)}\right) - y^{(i)}\right)^{2}} \\
+& = \frac{\partial}{\partial{w}} \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(wx^{(i)} + b - y^{(i)}\right)^{2}} \\
+& = \frac{\partial}{\partial{w}} \frac{1}{\cancel{2}m} \sum\limits_{i=1}^{m}{\left(wx^{(i)} + b - y^{(i)}\right)} \cancel{2}x^{(i)} \\
+\end{split}
+$$
+
+$$
+\boxed{\frac{\partial}{\partial{w}} J(w,b) = \frac{\partial}{\partial{w}} \frac{1}{m} \sum\limits_{i=1}^{m}{\left(wx^{(i)} + b - y^{(i)}\right)} x^{(i)}}
+$$
+
+$$
+\begin{split}
+\frac{\partial}{\partial{b}} J(w,b) & = \frac{\partial}{\partial{b}} \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(f_{w,b}\left(x^{(i)}\right) - y^{(i)}\right)^{2}} \\
+& = \frac{\partial}{\partial{b}} \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(wx^{(i)} + b - y^{(i)}\right)^{2}} \\
+& = \frac{\partial}{\partial{b}} \frac{1}{\cancel{2}m} \sum\limits_{i=1}^{m}{\left(wx^{(i)} + b - y^{(i)}\right)} \cancel{2}
+\end{split}
+$$
+
+$$
+\boxed{\frac{\partial}{\partial{b}} J(w,b) = \frac{\partial}{\partial{b}} \frac{1}{m} \sum\limits_{i=1}^{m}{\left(wx^{(i)} + b - y^{(i)}\right)}}
+$$
+
+* When using the Squared error cost function with Linear Regression we have only one minimum which is a global minimum because the cost function is convex function.
