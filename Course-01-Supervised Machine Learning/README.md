@@ -156,3 +156,23 @@ $$
 $$
 
 [JupyterLab example](./code/C1_W1_Lab03_Cost_function_Soln.ipynb)
+
+## Gradient descent
+* **Gradient descent** is an algorithm that can be used to find the values of $w$ and $b$ that results in the smallest possible cost $\min_{w,b} J(w,b)$.
+* **Gradient descent** is used all over machine learning not just for linear regression (for example in Deep Learning models)
+### Gradient descent algorithm 
+$$
+\left.\begin{aligned}
+w = w - \alpha \frac{\partial}{\partial{w}}J(w,b) \\
+b = b - \alpha \frac{\partial}{\partial{b}}J(w,b) 
+\end{aligned}
+\right\}
+\qquad w\text{ and }b\text{ must be updated simultaneously}
+$$
+
+* $\alpha$ is the learning rate. 
+    * It is usually a small positive number between $0$ and $1$ (_i.e._ $0.01$)
+    * What $alpha$ does is basically controls how big of a step you take downhill on the function graph.
+    * If $\alpha$ is very large, then this corresponds to a very aggressive gradient descent procedure. 
+* $\frac{\partial}{\partial{w}}J(w,b)$ is the derivative term of the cost function $J$
+    * In combination with the learning rate $\alpha$ it determine the size of the steps.
