@@ -176,3 +176,17 @@ $$
     * If $\alpha$ is very large, then this corresponds to a very aggressive gradient descent procedure. 
 * $\frac{\partial}{\partial{w}}J(w,b)$ is the derivative term of the cost function $J$
     * In combination with the learning rate $\alpha$ it determine the size of the steps.
+
+## Learning rate
+The choice of the learning rate $\alpha$ will have a huge impact on the efficiency of your implementation of gradient descent. And if alpha, the learning rate is chosen poorly rate of descent may not even work at all.  
+
+![Too small learning rate](./images/learning-rate-01.jpg)  
+If $\alpha$ is too **small**:
+* Gradient descent may be **slow**.
+
+![Too large learning rate](./images/learning-rate-02.jpg)  
+If $\alpha$ is too **large**, Gradient descent may be:
+* **Overshoot, never reach minimum**.
+* Fail to converge, diverge.
+
+![Learning Rate - Local minimum](./images/learning-rate-03.jpg)
