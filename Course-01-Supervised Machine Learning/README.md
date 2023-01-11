@@ -246,3 +246,5 @@ $$
 * When using the Squared error cost function with Linear Regression we have only one minimum which is a global minimum because the cost function is convex function.
 
 * **Batch** gradient descent: **Batch** means that each step of gradient descent uses **all the training examples**.
+
+[JupyterLab example](./code/C1_W1_Lab04_Gradient_Descent_Soln.ipynb)
