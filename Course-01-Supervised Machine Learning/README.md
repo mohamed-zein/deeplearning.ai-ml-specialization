@@ -3,4 +3,4 @@
 * [Week 2: Regression with multiple input variables](./week-02.md)
 * Week 3: Classification
 
-[<<Previous](../README.md) [Next>>](./week-01.md)
+[<<Previous](../README.md) | [Next>>](./week-01.md)
