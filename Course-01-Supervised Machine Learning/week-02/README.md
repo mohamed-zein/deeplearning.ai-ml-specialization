@@ -95,4 +95,4 @@ This vectorized implementation using NumPy will run much faster because it will 
 f = np.dot(w, x) + b
 ```
 
-[<<Previous](./week-01.md) | [Next>>]()
+[<<Previous](../week-01/README.md) | [Next>>]()
