@@ -95,4 +95,6 @@ This vectorized implementation using NumPy will run much faster because it will 
 f = np.dot(w, x) + b
 ```
 
+[JupyterLab Example](./code/C1_W2_Lab01_Python_Numpy_Vectorization_Soln.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
