@@ -247,3 +247,5 @@ $$
 * **Batch** gradient descent: **Batch** means that each step of gradient descent uses **all the training examples**.
 
 [JupyterLab example](./code/C1_W1_Lab04_Gradient_Descent_Soln.ipynb)
+
+[<<Previous](./README.md) [Next>>]()
