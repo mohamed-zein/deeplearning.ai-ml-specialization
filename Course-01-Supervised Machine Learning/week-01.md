@@ -248,4 +248,4 @@ $$
 
 [JupyterLab example](./code/C1_W1_Lab04_Gradient_Descent_Soln.ipynb)
 
-[<<Previous](./README.md) [Next>>]()
+[<<Previous](./README.md) [Next>>](./week-02.md)
