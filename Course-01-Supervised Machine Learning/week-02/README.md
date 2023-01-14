@@ -196,4 +196,24 @@ $$
 98.5 \leq x_{j} \leq 105 \implies \text{Too large ... rescaling needed} \newline
 $$
 
+### Checking gradient descent for convergence
+* Make sure that gradient descent is working well.
+* The objective of gradient descent is:
+
+$$
+\text{Objective:  } \min_{\vec{w},b}{J(\vec{w},b)}
+$$
+
+![Learning Curve](./images/learning-curve.jpg)
+
+* Plot the cost function $J(\vec{w},b)$ against the **# iterations** which is a type of graphs used in Machine Learning called **Learning Curve**.
+    * $J(\vec{w},b)$ should be decreasing after every iteration.
+    * If the value of $J(\vec{w},b)$ is ever increasing after one iteration, this can be because:
+        * Learning rate $\alpha$ is choosen poorly which means $\alpha$ is too large.
+        * It could be bug in the code.
+    * \# iteration needed varies between applications.
+* It is possible to create **Automatic convergence test**
+    * Let $\epsilon$ **epsilon** be a small number, for example $10^{-3}$
+    * If $J(\vec{w},b)$ descreases by $\leq \epsilon$ in one iteration, declare **convergence**.
+
 [<<Previous](../week-01/README.md) | [Next>>]()
