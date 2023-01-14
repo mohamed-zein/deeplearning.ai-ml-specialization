@@ -64,6 +64,9 @@ When ploting the data of breast cancer (_Age_ & _Tumor size_ vs _Tumor Type_)
     * [Google News](https://news.google.com/): It goes through hudereds of thousands of news articles on the internet and groups related stories together.
     * [DNA microarray](https://en.wikipedia.org/wiki/DNA_microarray)
     * Grouping customers
+
+[Lab: Python and Jupyter Notebooks](./code/C1_W1_Lab01_Python_Jupyter_Soln.ipynb)
+
 ## Regression Model
 ### Terminology
 * **Training Set**: Data used to train the model.
@@ -106,7 +109,7 @@ $$
     * **One variable** means that there's a single input variable or feature $x$.
     * One input varibale also can be called **Univariate** linear regression.
 
-[JupyterLab example](./code/C1_W1_Lab02_Model_Representation_Soln.ipynb)
+[Lab: Model representation](./code/C1_W1_Lab02_Model_Representation_Soln.ipynb)
 
 ## Cost Function
 * In order to implement [Linear Regression](#regression-model), the first key step is to define **Cost Function**.
@@ -155,7 +158,7 @@ $$
 \min_{w,b} J(w,b)
 $$
 
-[JupyterLab example](./code/C1_W1_Lab03_Cost_function_Soln.ipynb)
+[Lab: Cost function](./code/C1_W1_Lab03_Cost_function_Soln.ipynb)
 
 ## Gradient descent
 * **Gradient descent** is an algorithm that can be used to find the values of $w$ and $b$ that results in the smallest possible cost $\min_{w,b} J(w,b)$.
@@ -246,6 +249,6 @@ $$
 
 * **Batch** gradient descent: **Batch** means that each step of gradient descent uses **all the training examples**.
 
-[JupyterLab example](./code/C1_W1_Lab04_Gradient_Descent_Soln.ipynb)
+[Lab: Gradient descent](./code/C1_W1_Lab04_Gradient_Descent_Soln.ipynb)
 
 [<<Previous](../README.md) | [Next>>](../week-02/README.md)
