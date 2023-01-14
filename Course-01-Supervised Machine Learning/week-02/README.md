@@ -216,4 +216,12 @@ $$
     * Let $\epsilon$ **epsilon** be a small number, for example $10^{-3}$
     * If $J(\vec{w},b)$ descreases by $\leq \epsilon$ in one iteration, declare **convergence**.
 
+### Choosing the learning rate
+* As explained in the [Learning Curve](#checking-gradient-descent-for-convergence), increasing $J(\vec{w},b)$ means that either:
+    * Learning rate $\alpha$ is choosen poorly which means $\alpha$ is too large.
+    * It could be bug in the code.
+* To debug this scenario, we can set $\alpha$ to a very small number:
+    * If the $J(\vec{w},b)$ is still increasing then, it is a bug in the code.
+* However, setting $\alpha$ to very small number can cause gradient descent to take a lot more iterations to converge.
+
 [<<Previous](../week-01/README.md) | [Next>>]()
