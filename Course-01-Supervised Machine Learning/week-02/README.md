@@ -1,5 +1,6 @@
 # Week 2: Regression with multiple input variables
-## Multiple features
+## Multiple Linea regression
+### Multiple features
 Consider the housing problem with more than one features.
 Size in Feets <br> $\mathbf{x}_{1}$ | Number of bedrooms <br> $\mathbf{x}_{2}$ | Number of floors <br> $\mathbf{x}_{3}$ | Age of home in years <br> $\mathbf{x}_{4}$ | Price (\$) in \$1000's
 --------------|--------------------|------------------|----------------------|-----------------------
@@ -19,7 +20,7 @@ n & = \text{number of features} \newline
 \end{split}
 $$
 
-### Multiple Linear regression model using $n$ features  
+#### Multiple Linear regression model using $n$ features  
 * Parameters of the model are:
 
 $$
@@ -39,7 +40,7 @@ f_{\vec{w},b}(\vec{\mathbf{x}}) & = \vec{\mathbf{w}} \underbrace{\cdot}_{\text{d
 \end{split}
 $$
 
-## Vectorization
+### Vectorization
 When using Vectorization when writing your machine learning code, it makes your program shorter and also run more effeciently.
 ### Vectorization example
 $$
@@ -57,7 +58,7 @@ b = 4
 x = np.array([10,20,30])
 ```
 
-#### Without Vectorization 
+##### Without Vectorization 
 We can implement the model (for small $n$) as:  
 
 $$
@@ -83,10 +84,10 @@ for j in range(0, n):
 f = f + b
 ```
 
-#### Using Vectorization
+##### Using Vectorization
 
 $$
-f_{\vec{w},b}(\vec{\mathbf{x}}) = \vec{\mathbf{w}} \cdot \vec{\mathbf{x}} + b \newline
+f_{\vec{w},b}(\vec{\mathbf{x}}) = \vec{\mathbf{w}} \cdot \vec{\mathbf{x}} + b
 $$
 
 This vectorized implementation using NumPy will run much faster because it will utilize parallel computation.
@@ -96,5 +97,53 @@ f = np.dot(w, x) + b
 ```
 
 [JupyterLab Example](./code/C1_W2_Lab01_Python_Numpy_Vectorization_Soln.ipynb)
+
+
+### Gradient descent for multiple linear regression
+The notations of Gradient descent for multiple linear regression will be:
+* Parameters:
+
+$$
+\vec{\mathbf{w}} = \begin{bmatrix} w_{1} & \cdots & w_{n} \end{bmatrix} \newline
+b \text{ is a number} 
+$$
+
+* Model:
+
+$$
+f_{\vec{w},b}(\vec{\mathbf{x}}) = \vec{\mathbf{w}} \cdot \vec{\mathbf{x}} + b
+$$
+
+* Cost function:
+
+$$
+J(\vec{\mathbf{w}}, b)
+$$
+
+* Gradient descent algorithm:
+
+$$
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
+& = w_{j} -  \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x_{j}^{(i)} \newline
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+& = b - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right) \newline
+\rbrace
+\end{align*}
+$$
+
+[JupyterLab Example](./code/C1_W2_Lab02_Multiple_Variable_Soln.ipynb)
+
+### An alternative to gradient descent
+An alternative to gradient descent is a method called **Normal Equation**
+* Works only for Linear Regression
+* Solve for $w$, $b$ without iterations useing advanced Linear Algebra techniques.
+* It may be used in some machine learning libraries that implement the Linear Regression.
+* Gradient descent is the recommended method for finding parameters $w$, $b$.
+
+Disadvantages:
+* Doesn't generalize to other learning algorithms.
+* Slow when the number of features is large (>10,000)
 
 [<<Previous](../week-01/README.md) | [Next>>]()
