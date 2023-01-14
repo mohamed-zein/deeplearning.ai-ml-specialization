@@ -224,4 +224,6 @@ $$
     * If the $J(\vec{w},b)$ is still increasing then, it is a bug in the code.
 * However, setting $\alpha$ to very small number can cause gradient descent to take a lot more iterations to converge.
 
+[JupyterLab Example](./code/C1_W2_Lab03_Feature_Scaling_and_Learning_Rate_Soln.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
