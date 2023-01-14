@@ -241,4 +241,6 @@ $$
 
 With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extremely important.
 
+[Lab: Feature engineering and Polynomial regression](./code/C1_W2_Lab04_FeatEng_PolyReg_Soln.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
