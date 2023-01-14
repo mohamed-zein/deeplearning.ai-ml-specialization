@@ -243,4 +243,6 @@ With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extreme
 
 [Lab: Feature engineering and Polynomial regression](./code/C1_W2_Lab04_FeatEng_PolyReg_Soln.ipynb)
 
+[Lab: Linear regression with scikit-learn](./code/C1_W2_Lab05_Sklearn_GD_Soln.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
