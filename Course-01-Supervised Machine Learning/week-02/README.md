@@ -224,9 +224,21 @@ $$
     * If the $J(\vec{w},b)$ is still increasing then, it is a bug in the code.
 * However, setting $\alpha$ to very small number can cause gradient descent to take a lot more iterations to converge.
 
-[JupyterLab Example](./code/C1_W2_Lab03_Feature_Scaling_and_Learning_Rate_Soln.ipynb)
+[Lab: Feature scaling and learning rate](./code/C1_W2_Lab03_Feature_Scaling_and_Learning_Rate_Soln.ipynb)
 
 ### Feature engineering
 **Feature engineering**: Using ituition to design new features, by transforming or combining original features.
+
+### Polynomial regression
+**Polynomial regression**: enables us to use non-linear models to fit in our data.  
+Examples:
+
+$$
+f_{\vec{w},b}(\vec{\mathbf{x}}) = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\mathbf{x}^{2} + b \newline
+f_{\vec{w},b}(\vec{\mathbf{x}}) = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\mathbf{x}^{2} + \mathbf{w}_{3}\mathbf{x}^{3} + b \newline
+f_{\vec{w},b}(\vec{\mathbf{x}}) = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\sqrt{\mathbf{x}} + b \newline
+$$
+
+With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extremely important.
 
 [<<Previous](../week-01/README.md) | [Next>>]()
