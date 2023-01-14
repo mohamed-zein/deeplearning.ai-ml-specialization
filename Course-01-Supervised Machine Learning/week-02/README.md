@@ -226,4 +226,7 @@ $$
 
 [JupyterLab Example](./code/C1_W2_Lab03_Feature_Scaling_and_Learning_Rate_Soln.ipynb)
 
+### Feature engineering
+**Feature engineering**: Using ituition to design new features, by transforming or combining original features.
+
 [<<Previous](../week-01/README.md) | [Next>>]()
