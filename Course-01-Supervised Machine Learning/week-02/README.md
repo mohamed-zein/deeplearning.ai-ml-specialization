@@ -146,4 +146,54 @@ Disadvantages:
 * Doesn't generalize to other learning algorithms.
 * Slow when the number of features is large (>10,000)
 
+## Gradient descent in practice
+### Feature scaling
+* **Feature scaling** convert features of different ranges of values into comparable ranges of values.
+* Gradient descent is much faster with scaled features.
+### Feature Scaling methods
+#### Divide by maximum
+Divide each value of feature $x$ by the maximum value in the range of $x$ values
+
+$$
+\text{If } 300 \leq x_{1} \leq 2000 \quad \text{Then:} \newline
+x_{1,scaled} = \frac{x}{\underbrace{2000}_\text{max}} \newline
+\implies 0.15 \leq x_{1,scaled} \leq 1
+$$
+
+#### Mean normalization
+Use the average of the features values $\mu$
+
+$$
+\begin{split}
+\text{If } 300 & \leq x_{1} \leq 2000 \quad \text{Then:} \newline
+x_{1,scaled} & = \frac{x_{1} - \mu_{1}}{x_{max} - x_{min}} \newline
+& = \frac{x_{1} - \mu_{1}}{2000 - 300} \newline
+\implies & -0.18 \leq x_{1} \leq 0.82
+\end{split}
+$$
+
+#### Z-score normalization
+We need to calculate the standard deviation of each feature $\sigma$ and the mean $\mu$
+
+$$
+\begin{split}
+\text{If } 300 \leq & x_{1} \leq 2000 \quad \text{ and } \mu_{1} = 600, \sigma_{1} = 450 \text{ Then:} \newline
+x_{1,scaled} & = \frac{x_{1} - \mu_{1}}{\sigma_{1}} \newline
+\implies & -0.67 \leq x_{1} \leq 3.1
+\end{split}
+$$
+
+### Feature scaling considerations
+* Aim -loosely- for about $-1 \leq x_{j} \leq 1$ for each feature $x_{j}$
+
+$$
+-3 \leq x_{j} \leq 3 \implies \text{Acceptable range} \newline
+-0.3 \leq x_{j} \leq 0.3 \implies \text{Acceptable range} \newline
+0 \leq x_{j} \leq 3 \implies \text{OK, no rescaling needed} \newline
+-2 \leq x_{j} \leq 0.5 \implies \text{OK, no rescaling needed} \newline
+-100 \leq x_{j} \leq 100 \implies \text{Too large ... rescaling needed} \newline
+-0.001 \leq x_{j} \leq 0.001 \implies \text{Too small ... rescaling needed} \newline
+98.5 \leq x_{j} \leq 105 \implies \text{Too large ... rescaling needed} \newline
+$$
+
 [<<Previous](../week-01/README.md) | [Next>>]()
