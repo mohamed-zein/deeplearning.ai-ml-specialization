@@ -245,4 +245,6 @@ With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extreme
 
 [Lab: Linear regression with scikit-learn](./code/C1_W2_Lab05_Sklearn_GD_Soln.ipynb)
 
+[Week 2 practice lab: Linear regression](./code/C1_W2_Linear_Regression.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
