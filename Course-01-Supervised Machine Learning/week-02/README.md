@@ -253,4 +253,4 @@ With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extreme
 
 [Week 2 practice lab: Linear regression](./code/C1_W2_Linear_Regression.ipynb)
 
-[<<Previous](../week-01/README.md) | [Next>>]()
+[<<Previous](../week-01/README.md) | [Next>>](../week-03/README.md)
