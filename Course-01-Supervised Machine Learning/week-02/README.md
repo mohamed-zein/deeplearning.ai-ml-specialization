@@ -155,9 +155,11 @@ Disadvantages:
 Divide each value of feature $x$ by the maximum value in the range of $x$ values
 
 $$
+\begin{split}
 \text{If } 300 \leq x_{1} \leq 2000 \quad \text{Then:} \newline
 x_{1,scaled} = \frac{x}{\underbrace{2000}_\text{max}} \newline
 \implies 0.15 \leq x_{1,scaled} \leq 1
+\end{split}
 $$
 
 #### Mean normalization
@@ -187,13 +189,15 @@ $$
 * Aim -loosely- for about $-1 \leq x_{j} \leq 1$ for each feature $x_{j}$
 
 $$
--3 \leq x_{j} \leq 3 \implies \text{Acceptable range} \newline
--0.3 \leq x_{j} \leq 0.3 \implies \text{Acceptable range} \newline
-0 \leq x_{j} \leq 3 \implies \text{OK, no rescaling needed} \newline
--2 \leq x_{j} \leq 0.5 \implies \text{OK, no rescaling needed} \newline
--100 \leq x_{j} \leq 100 \implies \text{Too large ... rescaling needed} \newline
--0.001 \leq x_{j} \leq 0.001 \implies \text{Too small ... rescaling needed} \newline
-98.5 \leq x_{j} \leq 105 \implies \text{Too large ... rescaling needed} \newline
+\begin{split}
+-3 \leq x_{j} \leq 3 & \implies \text{Acceptable range} \newline
+-0.3 \leq x_{j} \leq 0.3 & \implies \text{Acceptable range} \newline
+0 \leq x_{j} \leq 3 & \implies \text{OK, no rescaling needed} \newline
+-2 \leq x_{j} \leq 0.5 & \implies \text{OK, no rescaling needed} \newline
+-100 \leq x_{j} \leq 100 & \implies \text{Too large ... rescaling needed} \newline
+-0.001 \leq x_{j} \leq 0.001 & \implies \text{Too small ... rescaling needed} \newline
+98.5 \leq x_{j} \leq 105 & \implies \text{Too large ... rescaling needed} \newline
+\end{split}
 $$
 
 ### Checking gradient descent for convergence
@@ -234,9 +238,11 @@ $$
 Examples:
 
 $$
-f_{\vec{w},b}(\vec{\mathbf{x}}) = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\mathbf{x}^{2} + b \newline
-f_{\vec{w},b}(\vec{\mathbf{x}}) = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\mathbf{x}^{2} + \mathbf{w}_{3}\mathbf{x}^{3} + b \newline
-f_{\vec{w},b}(\vec{\mathbf{x}}) = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\sqrt{\mathbf{x}} + b \newline
+\begin{split}
+f_{\vec{w},b}(\vec{\mathbf{x}}) & = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\mathbf{x}^{2} + b \newline
+f_{\vec{w},b}(\vec{\mathbf{x}}) & = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\mathbf{x}^{2} + \mathbf{w}_{3}\mathbf{x}^{3} + b \newline
+f_{\vec{w},b}(\vec{\mathbf{x}}) & = \mathbf{w}_{1}\mathbf{x} + \mathbf{w}_{2}\sqrt{\mathbf{x}} + b \newline
+\end{split}
 $$
 
 With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extremely important.
