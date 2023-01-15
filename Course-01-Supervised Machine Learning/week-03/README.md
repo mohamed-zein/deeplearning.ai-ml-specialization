@@ -1,7 +1,8 @@
 # Week 3: Classification
-## Motivations
+## Classification with Logistic regression
+### Motivations
 Classification is different from Regression in that the output $y$ is only one of handful of possible values.
-### Binary classification
+#### Binary classification
 * In Binary classification, $y$ can only be one of **two** values, classes or categories.
 *  The output class or category will be denoted as:
     * **no** or **yes**
@@ -12,7 +13,7 @@ Classification is different from Regression in that the output $y$ is only one o
 
 [Lab: Classification](./code/C1_W3_Lab01_Classification_Soln.ipynb)
 
-## Logistic regression
+### Logistic regression
 * Logistic regression tries to fit the data with a curve like below and output a number (i.e. 0.7) which will be the threshold:  
 ![Logistic regression](./images/logistic-regression-01.jpg)
 * To generate output between 0 and 1 we use **sigmoid function** also called **logistic function** which output values between 0 and 1.
@@ -52,5 +53,9 @@ f_{\vec{w},b}(\vec{\mathbf{x}}) = P(y=1|\vec{\mathbf{x}};\vec{w},b) \\
 $$
 
 [Lab: Sigmoid function and logistic regression](./code/C1_W3_Lab02_Sigmoid_function_Soln.ipynb)
+
+### Decision boundary
+* Since the Logistic regression $P(y=1|\vec{\mathbf{x}};\vec{w},b)$ returns the probability of output 1, we need to set a **threshold** so above it, my prediction is = 1.
+* A common choice will be to set the **threshold** = 0.5
 
 [<<Previous](../week-02/README.md) | [Next>>]()
