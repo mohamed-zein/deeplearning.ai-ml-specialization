@@ -58,4 +58,6 @@ $$
 * Since the Logistic regression $P(y=1|\vec{\mathbf{x}};\vec{w},b)$ returns the probability of output 1, we need to set a **threshold** so above it, my prediction is = 1.
 * A common choice will be to set the **threshold** = 0.5
 
+[Lab: Decision boundary](./code/C1_W3_Lab03_Decision_Boundary_Soln.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
