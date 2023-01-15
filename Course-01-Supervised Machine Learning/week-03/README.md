@@ -10,4 +10,6 @@ Classification is different from Regression in that the output $y$ is only one o
     * **negative class** or **positive class**
         * **negative** and **positive** doesn't imply _bad_ vs _good_ but rather convey the message of _absence_ vs _presence_.
 
+[Lab: Classification](./code/C1_W3_Lab01_Classification_Soln.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
