@@ -60,4 +60,20 @@ $$
 
 [Lab: Decision boundary](./code/C1_W3_Lab03_Decision_Boundary_Soln.ipynb)
 
+## Cost function for logistic regression
+* The squared error cost function used in Linear Regression won't be suitable for Logistic Regression.
+    * In linear regression $J(\vec{w},b)$ is **convex** function.
+    * In logistic regression $J(\vec{w},b)$ is **non-convex** function.
+    ![Linear vs Logistic cost function](./images/logistic-cost-function-01.jpg)
+
+$$
+J(\vec{w},b) = 
+    \begin{cases}
+        -\log{\Big(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) \Big)} & \text{if } y^{i} = 1 \\
+        -\log{\Big(1-f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) \Big)} & \text{if } y^{i} = 0
+    \end{cases}
+$$
+
+[Lab: Logistic loss](./code/C1_W3_Lab04_LogisticLoss_Soln.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
