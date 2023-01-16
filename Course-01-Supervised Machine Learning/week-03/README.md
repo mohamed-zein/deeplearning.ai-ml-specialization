@@ -66,12 +66,23 @@ $$
     * In logistic regression $J(\vec{w},b)$ is **non-convex** function.
     ![Linear vs Logistic cost function](./images/logistic-cost-function-01.jpg)
 
+* As our $f_{wb}(x)$ now has a non-linear component, the sigmoid function:   $f_{w,b}(x^{(i)}) = sigmoid(wx^{(i)} + b )$, Logistic regression requires a cost function more suitable to its non-linear nature.
+
+### Logistic Loss function
+* In order to build a cost function suitable for Linear Regression, we will introduce a new function called **Loss Function** $L(f_{\vec{w},b}(\vec{\mathbf{x}}^{(i)}), y^{(i)})$
+
 $$
-J(\vec{w},b) = 
+L(f_{\vec{w},b}(\vec{\mathbf{x}}^{(i)}), y^{(i)}) = 
     \begin{cases}
         -\log{\Big(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) \Big)} & \text{if } y^{i} = 1 \\
         -\log{\Big(1-f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) \Big)} & \text{if } y^{i} = 0
     \end{cases}
+$$
+
+* The Cost function will be the average of the Loss functions for all data points:
+
+$$
+J(\vec{w}, b) = \frac{1}{m} \sum\limits_{i=1}^{m}L(f_{\vec{w},b}(\vec{\mathbf{x}}^{(i)}), y^{(i)})
 $$
 
 [Lab: Logistic loss](./code/C1_W3_Lab04_LogisticLoss_Soln.ipynb)
