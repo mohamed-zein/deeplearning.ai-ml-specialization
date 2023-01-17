@@ -105,4 +105,56 @@ $$
 
 [Lab: Cost function for logistic regression](./code/C1_W3_Lab05_Cost_Function_Soln.ipynb)
 
+### Gradient Descent Implementation
+* Gradient descent algorithm:
+
+$$
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+\rbrace
+\end{align*}
+$$
+
+* The devitaves in the above equations are:
+
+$$
+\frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b) = \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x^{(i)}_{j}
+$$
+
+$$
+\frac{\partial}{\partial b} J(\vec{\mathbf{w}},b) = \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)
+$$
+
+* Gradient descent algorithm for Logistic regression is:
+
+$$
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
+& = w_{j} - \left[ \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x^{(i)}_{j}\right] \newline
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+ & = b -  \alpha \left[\frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right) \right] \newline
+\rbrace
+\end{align*}
+$$
+
+* Even though the above equations look like the ones for the Linear Regression, the main difference is the definition of $f_{\vec{w},b}\left(\vec{\mathbf{x}}\right)$ :
+
+$$
+\begin{align*}
+\text{Linear Regression: } & f_{\vec{w},b}\left(\vec{\mathbf{x}}\right) = \vec{\mathbf{w}} \cdot \vec{\mathbf{x}} + b \newline
+\text{Linear Regression: } & f_{\vec{w},b}\left(\vec{\mathbf{x}}\right) = \frac{1}{1+e^{-(\vec{\mathbf{w}} \cdot \vec{\mathbf{x}} + b)}}
+\end{align*}
+$$
+
+* Same concepts applies also:
+    * Monitor gradient descent (learnging curve)
+    * Vectorized implementation
+    * Feature scaling
+
+[Lab: Gradient descent for logistic regression](./code/C1_W3_Lab06_Gradient_Descent_Soln.ipynb)
+
+
 [<<Previous](../week-02/README.md) | [Next>>]()
