@@ -103,4 +103,6 @@ J(\vec{w}, b) & = \frac{1}{m} \sum\limits_{i=1}^{m}\left[L(f_{\vec{w},b}(\vec{\m
 \end{split}
 $$
 
+[Lab: Cost function for logistic regression](./code/C1_W3_Lab05_Cost_Function_Soln.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
