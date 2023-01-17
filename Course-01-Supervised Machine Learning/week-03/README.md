@@ -156,5 +156,6 @@ $$
 
 [Lab: Gradient descent for logistic regression](./code/C1_W3_Lab06_Gradient_Descent_Soln.ipynb)
 
+[Lab: Logistic regression with scikit-learn](./code/C1_W3_Lab07_Scikit_Learn_Soln.ipynb)
 
 [<<Previous](../week-02/README.md) | [Next>>]()
