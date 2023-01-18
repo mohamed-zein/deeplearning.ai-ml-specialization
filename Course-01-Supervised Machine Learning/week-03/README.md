@@ -223,4 +223,30 @@ $$
 \end{align*}
 $$
 
+##### Detailed Gradient descent
+* To look into more details of the formula of $w_{j}$:
+
+$$
+\begin{align*}
+w_{j} &= w_{j} - \alpha \left[\frac{1}{m} \sum\limits_{i=1}^{m} \left[\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) x_{j}^{(i)} \right] + \frac{\lambda}{m} w_{j} \right] \newline
+& = \underbrace{1 \cdot w_{j} - \alpha \frac{\lambda}{m} w_{j}}_{\text{Simplify below}} - \underbrace{\alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) x_{j}^{(i)}}_{\text{Usual Update}} \newline
+& = w_{j} \left(1 - \alpha \frac{\lambda}{m} \right) - \left[\alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) x_{j}^{(i)} \right]
+\end{align*}
+$$
+
+* To understand how the expression $w_{j} \left(1 - \alpha \frac{\lambda}{m} \right)$, we assume:
+    * Learning rate is small value $\alpha = 0.01$.
+    * Regularization term $\lambda = 1$
+    * The training set size $m=50$
+
+$$
+\begin{align*}
+1 - \alpha \frac{\lambda}{m} & = 1 - 0.01 \cdot \frac{1}{50} \newline
+& = 1 - 0.0002 \newline
+& = 0.9998
+\end{align*}
+$$
+
+* So every iteration, we multiply $w_{j} * 0.9998$, so each iteration will shrink the value of $w_{j}$ a little bit.
+
 [<<Previous](../week-02/README.md) | [Next>>]()
