@@ -172,4 +172,6 @@ To address overfitting of a model:
     * A disadvantage of feature selection is useful features could be lost.
 3. Regularization: Reduce the size of parameters $w_{j}$.
 
+[Lab: Overfitting](./code/C1_W3_Lab08_Overfitting_Soln.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
