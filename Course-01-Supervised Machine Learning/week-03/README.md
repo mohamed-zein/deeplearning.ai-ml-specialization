@@ -248,4 +248,24 @@ $$
 
 * So every iteration, we multiply $w_{j} * 0.9998$, so each iteration will shrink the value of $w_{j}$ a little bit.
 
+### Regularized logistic regression
+To add a regularization term for Logistic regression
+$$
+\begin{split}
+J(\vec{w}, b) & = -\frac{1}{m} \sum\limits_{i=1}^{m} \left[y^{(i)} \log{\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right)\right)} + \left(1-y^{(i)}\right)\log{\left(1 - f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right)\right)} \right] + \frac{\lambda}{2m} \sum\limits_{j=1}^{n} w_{j}^{2}
+\end{split}
+$$
+
+#### Implementing Gradient descent for Regularized logistic regression
+$$
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
+& = w_{j} - \alpha \left[\frac{1}{m} \sum\limits_{i=1}^{m} \left[\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) x_{j}^{(i)} \right] + \frac{\lambda}{m} w_{j} \right] \newline
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+ &= b - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) \newline
+\rbrace & \quad \text{simultaneous update}
+\end{align*}
+$$
+
 [<<Previous](../week-02/README.md) | [Next>>]()
