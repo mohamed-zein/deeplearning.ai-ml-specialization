@@ -129,7 +129,7 @@ $$
 & = w_{j} -  \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x_{j}^{(i)} \newline
  b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
 & = b - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right) \newline
-\rbrace
+\rbrace & \quad \text{simultaneous update}
 \end{align*}
 $$
 
@@ -253,4 +253,4 @@ With Polynomial regression, [Feature scaling](#feature-scaling) becaomes extreme
 
 [Week 2 practice lab: Linear regression](./code/C1_W2_Linear_Regression.ipynb)
 
-[<<Previous](../week-01/README.md) | [Next>>]()
+[<<Previous](../week-01/README.md) | [Next>>](../week-03/README.md)
