@@ -129,7 +129,7 @@ $$
 & = w_{j} -  \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x_{j}^{(i)} \newline
  b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
 & = b - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right) \newline
-\rbrace
+\rbrace & \quad \text{simultaneous update}
 \end{align*}
 $$
 

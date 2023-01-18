@@ -215,7 +215,8 @@ $$
 \begin{align*} 
 \text{repeat}&\text{ until convergence:} \; \lbrace \newline
 \;  w &= w -  \alpha \frac{\partial}{\partial w} J(w,b)   \; \newline 
- b &= b -  \alpha \frac{\partial}{\partial b}  J(w,b) \newline \rbrace
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(w,b) \newline 
+ \rbrace & \quad \text{simultaneous update}
 \end{align*}
 $$
 
