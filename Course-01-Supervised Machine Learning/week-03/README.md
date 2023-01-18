@@ -113,7 +113,7 @@ $$
 \text{repeat}&\text{ until convergence:} \; \lbrace \newline
 \;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
  b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
-\rbrace
+\rbrace & \quad \text{simultaneous update}
 \end{align*}
 $$
 
@@ -136,7 +136,7 @@ $$
 & = w_{j} - \left[ \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x^{(i)}_{j}\right] \newline
  b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
  & = b -  \alpha \left[\frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right) \right] \newline
-\rbrace
+\rbrace & \quad \text{simultaneous update}
 \end{align*}
 $$
 
@@ -173,5 +173,54 @@ To address overfitting of a model:
 3. Regularization: Reduce the size of parameters $w_{j}$.
 
 [Lab: Overfitting](./code/C1_W3_Lab08_Overfitting_Soln.ipynb)
+
+### Cost function with regularization
+* Regularization tries to make parameters $w_{1}, w_{2}, \dots , w_{n}$ small to reduce overfitting.
+* If we have large number of features, it will difficult to know which features to select or reduce.
+* The way **Regularization** is typically implemented is to penalize all the features, more precisely, penalize $w_{j}$ parameters.
+* So thne cost function with regularization would be:
+
+$$
+\min_{\vec{\mathbf{w}}, b} J(\vec{\mathbf{w}}, b) = \min_{\vec{\mathbf{w}}, b} \left[\underbrace{\overbrace{\frac{1}{2m} \sum\limits_{i=1}^{m} \left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y^{(i)} \right)^{2}}^{\text{Mean Squared Error}}}_\text{Fit the data} + \underbrace{\overbrace{\frac{\lambda}{2m} \sum\limits_{j=1}^{n} w^{2}_{j}}^{\text{Regularization term}}}_{\text{Keep } w_{j} \text{ small}} \right]
+$$
+
+* $\lambda$ is called the regularization parameter.
+    * When $\lambda$ is very small $\lambda \approx 0$, the regularization term $\approx 0$ and the model would overfit.
+    * If $\lambda$ is very big (i.e. $10^{10}$), the regularization term will be very high and so $f_{\vec{\mathbf{w}}, b}(\vec{\mathbf{x}}) = b$ and the model will underfit.
+* By convention, we are NOT penalizing $b$ because it makes almost no difference. 
+
+### Regularized linear regression
+* Recall Gradient descent algorithm:
+
+$$
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+\rbrace & \quad \text{simultaneous update}
+\end{align*}
+$$
+
+* When adding the Regularization term, then the derivatives become:
+
+$$
+\begin{align*}
+\frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b) & = \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x^{(i)}_{j} + \frac{\lambda}{m}w_{j} \newline
+
+\frac{\partial}{\partial b} J(\vec{\mathbf{w}},b) & = \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)
+\end{align*}
+$$
+
+#### Implementing gradient descent
+$$
+\begin{align*} 
+\text{repeat}&\text{ until convergence:} \; \lbrace \newline
+\;  w_{j} &= w_{j} -  \alpha \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b)   \; \newline 
+& = w_{j} - \alpha \left[\frac{1}{m} \sum\limits_{i=1}^{m} \left[\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) x_{j}^{(i)} \right] + \frac{\lambda}{m} w_{j} \right] \newline
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+ &= b - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y{(i)} \right) \newline
+\rbrace & \quad \text{simultaneous update}
+\end{align*}
+$$
 
 [<<Previous](../week-02/README.md) | [Next>>]()
