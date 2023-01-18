@@ -206,7 +206,6 @@ $$
 $$
 \begin{align*}
 \frac{\partial}{\partial w_{j}} J(\vec{\mathbf{w}},b) & = \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)x^{(i)}_{j} + \frac{\lambda}{m}w_{j} \newline
-
 \frac{\partial}{\partial b} J(\vec{\mathbf{w}},b) & = \frac{1}{m} \sum\limits_{i=1}^{m}\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right) - y^{(i)}\right)
 \end{align*}
 $$
