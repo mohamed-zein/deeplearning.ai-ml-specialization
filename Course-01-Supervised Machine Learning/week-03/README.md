@@ -158,4 +158,18 @@ $$
 
 [Lab: Logistic regression with scikit-learn](./code/C1_W3_Lab07_Scikit_Learn_Soln.ipynb)
 
+## The problem of overfitting
+![Regression Example](./images/overfitting-01.jpg)
+
+![Classification Example](./images/overfitting-02.jpg)
+
+### Addressing overfitting
+To address overfitting of a model:
+1. Collect more training examples.
+2. Select features to include/exclude.
+    * Many features + insufficient data = overfit
+    * Feature selection is using intution to select subset of the features to train the model upon.
+    * A disadvantage of feature selection is useful features could be lost.
+3. Regularization: Reduce the size of parameters $w_{j}$.
+
 [<<Previous](../week-02/README.md) | [Next>>]()
