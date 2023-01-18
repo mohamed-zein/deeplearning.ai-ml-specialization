@@ -268,4 +268,6 @@ $$
 \end{align*}
 $$
 
+[Lab: Regularization](./code/C1_W3_Lab09_Regularization_Soln.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
