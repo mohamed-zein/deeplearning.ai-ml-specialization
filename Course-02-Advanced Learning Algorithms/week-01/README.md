@@ -66,4 +66,20 @@
 > The way a neural network is implemented in practice each neuron in a certain layer will have access to every feature from the previous layer.   
 You can imagine that if you're trying to predict affordability and it knows what's the price shipping cost marketing and material, may be you'll learn to ignore marketing and material and just figure out through setting the parameters appropriately to only focus on the subset of features that are most relevant to affordability.
 
+### Example: Recognizing Images
+* If you're building a face recognition application, you might want to train a neural network that takes as input a picture like this and outputs the identity of the person in the picture.
+![Recognizing Images](./images/neural-network-04.jpg)
+* This image is 1,000 by 1,000 pixels. Its representation in the computer is actually as 1,000 by 1,000 grid, or also called 1,000 by 1,000 matrix of _pixel intensity values_.
+* If you were to take these pixel intensity values and unroll them into a vector, you end up with a list or a vector of a million pixel intensity values.  
+    >The face recognition problem is, can you train a neural network that takes as input a feature vector with a million pixel brightness values and outputs the identity of the person in the picture.  
+
+    ![Face Recognition](./images/neural-network-05.jpg)
+* This is how you might build a neural network to carry out this task. The input image $\vec{\mathbf{x}}$ is fed to this layer of neurons. 
+    * This is the first hidden layer, which then extract some features. 
+    * The output of this first hidden layer is fed to a second hidden layer
+    * That output is fed to a third layer
+    * Then finally to the output layer, which then estimates, say the probability of this being a particular person.
+
+
+
 [<<Previous](../README.md) | [Next>>]()
