@@ -79,7 +79,18 @@ You can imagine that if you're trying to predict affordability and it knows what
     * The output of this first hidden layer is fed to a second hidden layer
     * That output is fed to a third layer
     * Then finally to the output layer, which then estimates, say the probability of this being a particular person.
-
-
+----------
+## Neural network model
+### Neural network layer
+* The fundamental building block of most modern neural networks is a layer of neurons.
+* When you build neural networks with multiple layers, it'll be useful to give the layers different numbers.
+* By convention, we give numbers to our layers:
+    * _Layer 0_ (Input $\vec{\mathbf{x}}$)
+    * _Layer 1_
+    * _Layer 2_
+    * ... etc
+* In order to introduce notation to help us distinguish between the different layers, we are going to add superscript index to the output and variables of each layer:
+    * $\vec{a}^{[1]}$ is the output of layer 1
+    * $\vec{a}^{[1]} = g(\vec{\mathbf{w}_{1}}^{[1]} \cdot \vec{\mathbf{x}} + b_{1}^{[1]})$ is the activation function of _neuron 1_ in _layer 1_
 
 [<<Previous](../README.md) | [Next>>]()
