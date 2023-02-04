@@ -106,4 +106,11 @@ $$
 > This form is generic so when we apply it to the input later _Layer 0_ it becomes:  
 > $$\vec{\mathbf{x}} = \vec{a}^{[0]} $$
 
+### Inference: making predictions (forward propagation)
+![Forward Propagation](./images/neural-network-07.jpg)
+* This computation goes from left to right, you start from $\vec{\mathbf{x}}$ and compute $\vec{a}^{[1]}$, then $\vec{a}^{[2]}$, then $\vec{a}^{[3]}$.
+* This algorithm is also called _forward propagation_ because you're propagating the activations of the neurons.
+* This is in contrast to a different algorithm called _backward propagation_ or _back propagation_, which is used for learning.
+* This type of neural network architecture where you have more hidden units initially and then the number of hidden units decreases as you get closer to the output layer, is a pretty typical choice when choosing neural network architectures.
+
 [<<Previous](../README.md) | [Next>>]()
