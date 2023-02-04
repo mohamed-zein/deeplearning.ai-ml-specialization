@@ -93,4 +93,17 @@ You can imagine that if you're trying to predict affordability and it knows what
     * $\vec{a}^{[1]}$ is the output of layer 1
     * $\vec{a}^{[1]} = g(\vec{\mathbf{w}_{1}}^{[1]} \cdot \vec{\mathbf{x}} + b_{1}^{[1]})$ is the activation function of _neuron 1_ in _layer 1_
 
+### More complex neural networks
+![More complex neural networks](./images/neural-network-06.jpg)
+
+The general notation form of this equation for an arbitray layer $l$ and for an arbitray unit $j$ is:
+
+$$
+a_{j}^{[l]} = g(\vec{\mathbf{w}}_{j}^{[l]} \cdot \vec{a}^{[l-1]} + b_{j}^{[l]})
+$$
+
+> **Note**  
+> This form is generic so when we apply it to the input later _Layer 0_ it becomes:  
+> $$\vec{\mathbf{x}} = \vec{a}^{[0]} $$
+
 [<<Previous](../README.md) | [Next>>]()
