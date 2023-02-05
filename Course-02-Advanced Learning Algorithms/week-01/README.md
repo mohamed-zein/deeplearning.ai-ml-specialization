@@ -192,5 +192,27 @@ x = np.array([[200],
     ```python
     a1.numpy()
     ```
+### Building a neural network
+* We can build our neural network in easier way using `Sequential` 
+    ```python
+    layer_1 = Dense(units=3, activation='sigmoid')
+    layer_2 = Dense(units=1, activation='sigmoid')
+    model = Sequential([layer_1, layer_2])
+    ```
+* Also by convention, it is possible to simplify the above code:
+    ```python
+    model = Sequential([
+        Dense(units=3, activation='sigmoid'),
+        Dense(units=1, activation='sigmoid')])
+    ```
+* To train our model we call methods `compile` and `fit`:
+    ```python
+    model.compile(...)
+    model.fit(x, y)
+    ```
+* To use our model to predict, we call method `predict`:
+    ```python
+    model.predict(x_new)
+    ```
 
 [<<Previous](../README.md) | [Next>>]()
