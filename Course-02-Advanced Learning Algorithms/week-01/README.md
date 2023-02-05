@@ -138,5 +138,43 @@ For _Layer 2_ in the neural network:
 layer_2 = Dense(units=1, activation='sigmoid')
 a1 = layer_1(a1)
 ```
+### Data in TensorFlow
+* Data is represented differently in NumPy and TensorFlow.
+* TensorFlow is using matrix notation (instead of 1D vectors like in [previous course](../../Course-01-Supervised%20Machine%20Learning/README.md)) to effeciently handle large datasets.
+#### NumPy matrix 
+* **2D Matrix** $\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$ is $ 2 \times 3$ matrix (2 rows and 3 columns) and is represented in NumPy as:
+    ```python
+    x = np.array([[1, 2, 3], 
+                  [4, 5, 6]])
+    ```
+* **2D Matrix** $\begin{bmatrix} 0.1 & 0.2 \\ -3 & -4 \\ -0.5 & -0.6 \\ 7 & 8 \end{bmatrix}$ is $ 4 \times 2$ matrix (4 rows and 2 columns) and is represented in NumPy as:
+    ```python
+    x = np.array([[0.1, 0.2],
+                  [-3.0, -4.0], 
+                  [-0.5, -0.6],
+                  [7.0, 8.0]])
+    ```
+* **2D Matrix** $\begin{bmatrix}200 & 17\end{bmatrix}$ and is $1 \times 2$ matrix (also called _row vector_) and is represented in NumPy as:
+    ```python
+    x = np.array([[200, 17]])
+    ```
+* **2D Matrix** $\begin{bmatrix}200 \\ 17\end{bmatrix}$ and is $2 \times 1$ matrix (also called _column vector_) and is represented in NumPy as:
+    ```python
+    x = np.array([[200], 
+                  [17]])
+    ```
+* **1D Vector** is normal array and represented in NumPy as (notice the single brackets insead of double brackets like previous examples):
+    ```python
+    x = np.array([200, 17])
+    ```
+#### TensorFlow representation
+* While TensorFlow accepts data in NumPy, the data returned from TensorFlow layers (i.e. activation vectors) as object of type `tf.Tensor`:
+    ```
+    tf.Tensor([[0.2 0.7 0.3]], shape=(1, 3), dtype=float32)
+    ```
+* We can convert `tf.Tensor` into NumPy vector:
+    ```python
+    a1.numpy()
+    ```
 
 [<<Previous](../README.md) | [Next>>]()
