@@ -148,7 +148,7 @@ a1 = layer_1(a1)
 #### NumPy matrix 
 * **2D Matrix** example is $ 2 \times 3$ matrix (2 rows and 3 columns) and is represented in NumPy as:
 
-$$\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 2 & 3 \newline 4 & 5 & 6 \end{bmatrix}$$
 
 ```python
 x = np.array([[1, 2, 3], 
@@ -156,7 +156,7 @@ x = np.array([[1, 2, 3],
 ```
 * **2D Matrix** example is $ 4 \times 2$ matrix (4 rows and 2 columns) and is represented in NumPy as:
 
-$$\begin{bmatrix} 0.1 & 0.2 \\ -3 & -4 \\ -0.5 & -0.6 \\ 7 & 8 \end{bmatrix}$$
+$$\begin{bmatrix} 0.1 & 0.2 \newline -3 & -4 \newline -0.5 & -0.6 \newline 7 & 8 \end{bmatrix}$$
 
 ```python
 x = np.array([[0.1, 0.2],
@@ -173,7 +173,7 @@ x = np.array([[200, 17]])
 ```
 * **2D Matrix** example is $2 \times 1$ matrix (also called _column vector_) and is represented in NumPy as:
 
-$$\begin{bmatrix}200 \\ 17\end{bmatrix}$$
+$$\begin{bmatrix}200 \newline 17\end{bmatrix}$$
 
 ```python
 x = np.array([[200], 
