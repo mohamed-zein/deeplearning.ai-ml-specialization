@@ -215,4 +215,6 @@ x = np.array([[200],
     model.predict(x_new)
     ```
 
+[Lab: Coffee Roasting in Tensorflow](./code/C2_W1_Lab02_CoffeeRoasting_TF.ipynb)
+
 [<<Previous](../README.md) | [Next>>]()
