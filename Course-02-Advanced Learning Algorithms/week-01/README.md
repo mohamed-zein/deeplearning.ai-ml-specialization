@@ -113,4 +113,6 @@ $$
 * This is in contrast to a different algorithm called _backward propagation_ or _back propagation_, which is used for learning.
 * This type of neural network architecture where you have more hidden units initially and then the number of hidden units decreases as you get closer to the output layer, is a pretty typical choice when choosing neural network architectures.
 
+[Lab: Neurons and Layers](./code/C2_W1_Lab01_Neurons_and_Layers.ipynb)
+
 [<<Previous](../README.md) | [Next>>]()
