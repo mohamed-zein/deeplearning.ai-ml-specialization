@@ -118,6 +118,25 @@ $$
 ----------
 
 ## TensorFlow implementation
+* [TensorFlow](https://www.tensorflow.org/) is one of the leading frameworks to implementing deep learning algorithms. 
+* The other popular tool is [PyTorch](https://pytorch.org/). 
+* We're going to focus in this specialization on TensorFlow.
+### Inference in Code
+To build a layer in TensorFlow, we do it like the below example:
+```python
+# First we define NumPy Array for the data labels
+x = np.array([[200.0, 17.0]])
+# Then we define the layer using Dense layer
+# There are other layer types
+layer_1 = Dense(units=3, activation='sigmoid')
+# Finally we get the activation of layer_1
+a1 = layer_1(x)
+```
 
+For _Layer 2_ in the neural network:
+```python
+layer_2 = Dense(units=1, activation='sigmoid')
+a1 = layer_1(a1)
+```
 
 [<<Previous](../README.md) | [Next>>]()
