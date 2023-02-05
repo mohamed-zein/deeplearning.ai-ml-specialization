@@ -216,5 +216,8 @@ x = np.array([[200],
     ```
 
 [Lab: Coffee Roasting in Tensorflow](./code/C2_W1_Lab02_CoffeeRoasting_TF.ipynb)
+----------
+## Neural network implementation in Python
+[Lab: CoffeeRoastingNumPy](./code/C2_W1_Lab03_CoffeeRoasting_Numpy.ipynb)
 
 [<<Previous](../README.md) | [Next>>]()
