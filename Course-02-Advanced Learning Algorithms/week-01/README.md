@@ -91,7 +91,11 @@ You can imagine that if you're trying to predict affordability and it knows what
     * ... etc
 * In order to introduce notation to help us distinguish between the different layers, we are going to add superscript index to the output and variables of each layer:
     * $\vec{a}^{[1]}$ is the output of layer 1
-    * $\vec{a}^{[1]} = g(\vec{\mathbf{w}_{1}}^{[1]} \cdot \vec{\mathbf{x}} + b_{1}^{[1]})$ is the activation function of _neuron 1_ in _layer 1_
+    * The activation function of _neuron 1_ in _layer 1_ is:
+
+$$
+\vec{a}^{[1]} = g(\vec{\mathbf{w}_{1}}^{[1]} \cdot \vec{\mathbf{x}} + b_{1}^{[1]})
+$$
 
 ### More complex neural networks
 ![More complex neural networks](./images/neural-network-06.jpg)
@@ -142,27 +146,39 @@ a1 = layer_1(a1)
 * Data is represented differently in NumPy and TensorFlow.
 * TensorFlow is using matrix notation (instead of 1D vectors like in [previous course](../../Course-01-Supervised%20Machine%20Learning/README.md)) to effeciently handle large datasets.
 #### NumPy matrix 
-* **2D Matrix** $\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$ is $ 2 \times 3$ matrix (2 rows and 3 columns) and is represented in NumPy as:
-    ```python
-    x = np.array([[1, 2, 3], 
-                  [4, 5, 6]])
-    ```
-* **2D Matrix** $\begin{bmatrix} 0.1 & 0.2 \\ -3 & -4 \\ -0.5 & -0.6 \\ 7 & 8 \end{bmatrix}$ is $ 4 \times 2$ matrix (4 rows and 2 columns) and is represented in NumPy as:
-    ```python
-    x = np.array([[0.1, 0.2],
-                  [-3.0, -4.0], 
-                  [-0.5, -0.6],
-                  [7.0, 8.0]])
-    ```
-* **2D Matrix** $\begin{bmatrix}200 & 17\end{bmatrix}$ and is $1 \times 2$ matrix (also called _row vector_) and is represented in NumPy as:
-    ```python
-    x = np.array([[200, 17]])
-    ```
-* **2D Matrix** $\begin{bmatrix}200 \\ 17\end{bmatrix}$ and is $2 \times 1$ matrix (also called _column vector_) and is represented in NumPy as:
-    ```python
-    x = np.array([[200], 
-                  [17]])
-    ```
+* **2D Matrix** example is $ 2 \times 3$ matrix (2 rows and 3 columns) and is represented in NumPy as:
+
+$$\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$$
+
+```python
+x = np.array([[1, 2, 3], 
+              [4, 5, 6]])
+```
+* **2D Matrix** example is $ 4 \times 2$ matrix (4 rows and 2 columns) and is represented in NumPy as:
+
+$$\begin{bmatrix} 0.1 & 0.2 \\ -3 & -4 \\ -0.5 & -0.6 \\ 7 & 8 \end{bmatrix}$$
+
+```python
+x = np.array([[0.1, 0.2],
+              [-3.0, -4.0], 
+              [-0.5, -0.6],
+              [7.0, 8.0]])
+```
+* **2D Matrix** example is $1 \times 2$ matrix (also called _row vector_) and is represented in NumPy as:
+
+$$\begin{bmatrix}200 & 17\end{bmatrix}$$
+
+```python
+x = np.array([[200, 17]])
+```
+* **2D Matrix** example is $2 \times 1$ matrix (also called _column vector_) and is represented in NumPy as:
+
+$$\begin{bmatrix}200 \\ 17\end{bmatrix}$$
+
+```python
+x = np.array([[200], 
+              [17]])
+```
 * **1D Vector** is normal array and represented in NumPy as (notice the single brackets insead of double brackets like previous examples):
     ```python
     x = np.array([200, 17])
