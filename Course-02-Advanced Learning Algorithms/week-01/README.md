@@ -115,4 +115,9 @@ $$
 
 [Lab: Neurons and Layers](./code/C2_W1_Lab01_Neurons_and_Layers.ipynb)
 
+----------
+
+## TensorFlow implementation
+
+
 [<<Previous](../README.md) | [Next>>]()
