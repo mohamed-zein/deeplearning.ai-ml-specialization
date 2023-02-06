@@ -300,4 +300,32 @@ $$
 \end{align*}
 $$
 
+### Matrix multiplication rules
+* We can think of vector $\vec{\mathbf{a}}$ as _column vector_ while $\vec{\mathbf{a}}^\intercal$ as _row vector_.
+
+$$
+\vec{\mathbf{a}} = \begin{bmatrix}1 \newline 2 \newline 3\end{bmatrix} \quad \rightarrow \quad \vec{\mathbf{a}}^\intercal = \begin{bmatrix}1 & 2 & 3\end{bmatrix}
+$$
+
+* We can think of a matrix as set of _column vectors_ and to transpose a matrix we transpose each of its _column vectors_ into _row vectors_
+
+$$
+\mathbf{A} = \begin{bmatrix}\uparrow & \uparrow & \uparrow \newline \vec{\mathbf{a_{1}}} & \vec{\mathbf{a_{2}}} & \vec{\mathbf{a_{3}}} \newline \downarrow & \downarrow & \downarrow\end{bmatrix} \quad \rightarrow \quad \mathbf{A}^\intercal = \begin{bmatrix} \leftarrow & \vec{\mathbf{a_{1}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{2}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{3}}}^\intercal & \rightarrow \end{bmatrix}
+$$
+
+* To calculate $\mathbf{Z}$ as the multiplication of $\mathbf{A}^\intercal$ by $\mathbf{W}$:
+
+$$
+\begin{align*}
+\mathbf{A}^\intercal & = \begin{bmatrix} \leftarrow & \vec{\mathbf{a_{1}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{2}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{3}}}^\intercal & \rightarrow \end{bmatrix} \quad 
+\mathbf{W} = \begin{bmatrix}\uparrow & \uparrow & \uparrow & \uparrow \newline \vec{\mathbf{w_{1}}} & \vec{\mathbf{w_{2}}} & \vec{\mathbf{w_{3}}} & \vec{\mathbf{w_{4}}} \newline \downarrow & \downarrow & \downarrow & \downarrow \end{bmatrix} \newline
+\mathbf{Z} & = \mathbf{A}^\intercal \mathbf{W} \newline
+& = \begin{bmatrix}(\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{4}) \newline (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{4}) \newline (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{4})\end{bmatrix} \newline
+\end{align*}
+$$
+
+> **Note**: 
+> * Matrix multiplication is only valid if the number columns of the $1^{\text{st}}$ matrix is equal to the number of rows of the $2^{\text{nd}}$ matrix.
+> * The result will be a matrix with dimensions # rows of $1^{\text{st}}$ matrix $\times$ # columns of $2^{\text{nd}}$ matrix.
+
 [<<Previous](../README.md) | [Next>>]()
