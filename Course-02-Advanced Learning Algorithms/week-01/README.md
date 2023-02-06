@@ -254,11 +254,11 @@ $$
 * There is an equivalent way to write a _dot product_ by using the transpose of one of the vectors (convert a column vector into a row vector) and use vector vector multiplication:
 
 $$
-\vec{a} = \begin{bmatrix}1 \newline 2 \end{bmatrix} \rightarrow \vec{a}^\intercal = \begin{bmatrix}1 & 2 \end{bmatrix} \newline
+\vec{\mathbf{a}} = \begin{bmatrix}1 \newline 2 \end{bmatrix} \rightarrow \vec{\mathbf{a}}^\intercal = \begin{bmatrix}1 & 2 \end{bmatrix} \newline
+$$
 
-\begin{align*}
-z & = \vec{a}^\intercal \vec{\mathbf{w}}
-\end{align*}
+$$
+\mathbf{z} = \vec{a}^\intercal \vec{\mathbf{w}}
 $$
 
 #### Vector Matrix Multiplication
@@ -316,11 +316,13 @@ $$
 * To calculate $\mathbf{Z}$ as the multiplication of $\mathbf{A}^\intercal$ by $\mathbf{W}$:
 
 $$
+\mathbf{A}^\intercal = \begin{bmatrix} \leftarrow & \vec{\mathbf{a_{1}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{2}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{3}}}^\intercal & \rightarrow \end{bmatrix} \quad  \mathbf{W} = \begin{bmatrix}\uparrow & \uparrow & \uparrow & \uparrow \newline \vec{\mathbf{w_{1}}} & \vec{\mathbf{w_{2}}} & \vec{\mathbf{w_{3}}} & \vec{\mathbf{w_{4}}} \newline \downarrow & \downarrow & \downarrow & \downarrow \end{bmatrix}
+$$
+
+$$
 \begin{align*}
-\mathbf{A}^\intercal & = \begin{bmatrix} \leftarrow & \vec{\mathbf{a_{1}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{2}}}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a_{3}}}^\intercal & \rightarrow \end{bmatrix} \quad 
-\mathbf{W} = \begin{bmatrix}\uparrow & \uparrow & \uparrow & \uparrow \newline \vec{\mathbf{w_{1}}} & \vec{\mathbf{w_{2}}} & \vec{\mathbf{w_{3}}} & \vec{\mathbf{w_{4}}} \newline \downarrow & \downarrow & \downarrow & \downarrow \end{bmatrix} \newline
 \mathbf{Z} & = \mathbf{A}^\intercal \mathbf{W} \newline
-& = \begin{bmatrix}(\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{4}) \newline (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{4}) \newline (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{4})\end{bmatrix} \newline
+& = \begin{bmatrix}(\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{1}^\intercal \cdot \vec{\mathbf{w}}_{4}) \newline (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{2}^\intercal \cdot \vec{\mathbf{w}}_{4}) \newline (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{1}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{2}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{3}) & (\vec{\mathbf{a}}_{3}^\intercal \cdot \vec{\mathbf{w}}_{4})\end{bmatrix}
 \end{align*}
 $$
 
