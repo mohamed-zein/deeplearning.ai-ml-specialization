@@ -330,4 +330,6 @@ $$
 > * Matrix multiplication is only valid if the number columns of the $1^{\text{st}}$ matrix is equal to the number of rows of the $2^{\text{nd}}$ matrix.
 > * The result will be a matrix with dimensions # rows of $1^{\text{st}}$ matrix $\times$ # columns of $2^{\text{nd}}$ matrix.
 
+[Practice Lab: Neural Networks for Binary Classification](./assignment/C2_W1_Assignment.ipynb)
+
 [<<Previous](../README.md) | [Next>>]()
