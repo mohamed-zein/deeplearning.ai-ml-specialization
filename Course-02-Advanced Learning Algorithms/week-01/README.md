@@ -275,7 +275,7 @@ $$
 \begin{align*}
 \mathbf{Z} & = \vec{a}^\intercal \mathbf{W} \\
 & = \begin{bmatrix} \vec{a}^\intercal \vec{\mathbf{w_{1}}} & \vec{a}^\intercal \vec{\mathbf{w_{2}}} \end{bmatrix} \newline
-& = \begin{bmatrix} (1*3)+(2*4) & (1*5)+(2*6) \end{bmatrix} \newline
+& = \begin{bmatrix} (1 \times 3)+(2 \times 4) & (1 \times 5)+(2 \times 6) \end{bmatrix} \newline
 & = \begin{bmatrix} 11 & 17 \end{bmatrix}
 \end{align*}
 $$
