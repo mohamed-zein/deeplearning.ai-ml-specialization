@@ -219,5 +219,83 @@ x = np.array([[200],
 ----------
 ## Neural network implementation in Python
 [Lab: CoffeeRoastingNumPy](./code/C2_W1_Lab03_CoffeeRoasting_Numpy.ipynb)
+----------
+## Speculations on artificial general intelligence (AGI)
+**AI** (_Aritificial Intelligence_) include 2 branches:
+1. **ANI**: Aritificial Narrow Intelligence
+    * E.g., smart speakers, self-driving car, web search, AI in farming and factories.
+    * This field has recently seen great breakthroughs
+2. **AGI** Artificial General Intelligence
+    * Do anything a human can do.
+    * This field didn't see a lot of progress so far.
+----------
+## Vectorization
+### Matrix multiplication
+#### Dot products 
+* Consider 2 vectors $\vec{a}$ and $\vec{\mathbf{w}}$
+
+$$
+\vec{a} = \begin{bmatrix}1 \newline 2 \end{bmatrix} \qquad \vec{\mathbf{w}} = \begin{bmatrix}3 \newline 4 \end{bmatrix}
+$$
+
+* So the _dot product_ of $\vec{a} \cdot \vec{\mathbf{w}}$ is: 
+
+$$
+\begin{align*}
+z &= \vec{a} \cdot \vec{\mathbf{w}} \newline
+& = \begin{bmatrix}1 \newline 2 \end{bmatrix} \cdot \begin{bmatrix}3 \newline 4 \end{bmatrix} \newline
+& = (1 \times 3) + (2 \times 4) \newline
+& = 11
+\end{align*}
+$$
+
+* There is an equivalent way to write a _dot product_ by using the transpose of one of the vectors (convert a column vector into a row vector) and use vector vector multiplication:
+
+$$
+\vec{a} = \begin{bmatrix}1 \newline 2 \end{bmatrix} \rightarrow \vec{a}^\intercal = \begin{bmatrix}1 & 2 \end{bmatrix} \newline
+
+\begin{align*}
+z & = \vec{a}^\intercal \vec{\mathbf{w}}
+\end{align*}
+$$
+
+#### Vector Matrix Multiplication
+* Consider $\vec{a}$ and $\mathbf{W}$:
+
+$$
+\vec{a} = \begin{bmatrix} 1 \newline 2 \end{bmatrix} \quad \text{Then: } \quad \vec{a}^\intercal = \begin{bmatrix} 1 & 2 \end{bmatrix} \newline
+\mathbf{W} = \begin{bmatrix}3 & 5 \newline 4 & 6\end{bmatrix}
+$$
+
+* So $\mathbf{Z}$ will be $1 \times 2$ matrix:
+
+$$
+\begin{align*}
+\mathbf{Z} & = \vec{a}^\intercal \mathbf{W} \\
+& = \begin{bmatrix} \vec{a}^\intercal \vec{\mathbf{w_{1}}} & \vec{a}^\intercal \vec{\mathbf{w_{2}}} \end{bmatrix} \newline
+& = \begin{bmatrix} (1*3)+(2*4) & (1*5)+(2*6) \end{bmatrix} \newline
+& = \begin{bmatrix} 11 & 17 \end{bmatrix}
+\end{align*}
+$$
+
+#### Matrix Matrix Multiplication
+* First, we need to take transpose of a matrix
+    * We take each column and transpose it into a row
+
+$$
+\mathbf{A} = \begin{bmatrix}1 & -1 \newline 2 & -2\end{bmatrix} \quad \rightarrow \quad \mathbf{A}^\intercal = \begin{bmatrix}1 & 2 \newline -1 & -2\end{bmatrix}
+$$
+
+* In ML context, we think of matrix as set of columns and transposed matrix as set of rows
+* To calculate matrix matrix multiplication $\mathbf{Z}$
+
+$$
+\begin{align*}
+\mathbf{Z} & = \mathbf{A}^\intercal \mathbf{W} \\
+& = \begin{bmatrix}\leftarrow & \vec{\mathbf{a}}_{1}^\intercal & \rightarrow \newline \leftarrow & \vec{\mathbf{a}}_{2}^\intercal & \rightarrow \end{bmatrix} \begin{bmatrix}\uparrow & \uparrow \newline \vec{\mathbf{w}}_{1} & \vec{\mathbf{w}}_{2} \newline \downarrow & \downarrow\end{bmatrix} \newline
+& = \begin{bmatrix}\vec{\mathbf{a}}_{1}^\intercal \vec{\mathbf{w}}_{1} & \vec{\mathbf{a}}_{1}^\intercal \vec{\mathbf{w}}_{2} \newline \vec{\mathbf{a}}_{2}^\intercal \vec{\mathbf{w}}_{1} & \vec{\mathbf{a}}_{2}^\intercal \vec{\mathbf{w}}_{2}\end{bmatrix} \newline
+& = \begin{bmatrix}11 & 17 \newline -11 & -17\end{bmatrix}
+\end{align*}
+$$
 
 [<<Previous](../README.md) | [Next>>]()
