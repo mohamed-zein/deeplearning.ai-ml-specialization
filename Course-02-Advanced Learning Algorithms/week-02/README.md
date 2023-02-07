@@ -112,4 +112,11 @@ model.fit(X, y, epochs=100)
 3. Gradient Descent
     * TensorFlow uses **back propagation** to compute derivatives used in gradient descent.
 
+## Activation Functions
+### Alternatives to the sigmoid activation
+![Examples of Activation Functions](./images/activation-function-01.jpg)
+* We have already seen the **sigmoid** activation function $g(\mathbf{z}) = \frac{1}{1+e^{-\mathbf{z}}}$
+* Another common activation function is **ReLU** (Rectified Linear Unit) $g(\mathbf{z}) = \max(0,\mathbf{z})$
+* Also, we have the **Linear Activation Function** $g(\mathbf{z}) = \mathbf{z}$
+
 [<<Previous](../week-01/README.md) | [Next>>]()
