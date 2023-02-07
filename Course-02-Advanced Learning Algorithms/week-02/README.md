@@ -130,4 +130,6 @@ model.fit(X, y, epochs=100)
 ### Why do we need activation functions?
 * If we used **Linear Activation Functino** in all the neurons in the neural network, then the whole neural network will act as simple Linear Regression.
 
+[Lab: ReLU activation](./code/C2_W2_Relu.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
