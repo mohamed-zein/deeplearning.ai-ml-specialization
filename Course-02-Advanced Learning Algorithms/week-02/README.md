@@ -37,7 +37,7 @@ Given set of $(x,y)$ examples, how to build and train neural network in the code
 <tr>
 <td>
 
-Speicfy how to compute output given <br>input $x$ and parameters $w, b$ (defined model)
+Speicfy how to compute output given input $x$ and parameters $w, b$ (defined model)
 
 </td>
 <td>
