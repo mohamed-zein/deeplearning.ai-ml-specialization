@@ -118,5 +118,16 @@ model.fit(X, y, epochs=100)
 * We have already seen the **sigmoid** activation function $g(\mathbf{z}) = \frac{1}{1+e^{-\mathbf{z}}}$
 * Another common activation function is **ReLU** (Rectified Linear Unit) $g(\mathbf{z}) = \max(0,\mathbf{z})$
 * Also, we have the **Linear Activation Function** $g(\mathbf{z}) = \mathbf{z}$
+### Choosing activation functions
+#### Output Layer
+* It turns out that there'll often be one fairly natural choice, depending on what is the target or the ground truth label $\mathbf{y}$.
+    * When working on a binary classification problem where $\mathbf{y}$ is either $0$ or $1$, then the **sigmoid** activation function will almost always be the most natural choice.
+    * When working on regression problem where $\mathbf{y} = +/-$, we can use the **Linear Activation Function**.
+    * When working on regression problem where $\mathbf{y} = 0 \text{ or } +$ then we can use **ReLU**
+#### Hidden Layer
+* **ReLU** activation function is the most commonly used activation function used.
+    * It is much faster that the sigmoid
+### Why do we need activation functions?
+* If we used **Linear Activation Functino** in all the neurons in the neural network, then the whole neural network will act as simple Linear Regression.
 
 [<<Previous](../week-01/README.md) | [Next>>]()
