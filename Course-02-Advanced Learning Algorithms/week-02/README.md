@@ -212,5 +212,9 @@ model = Sequential([
     ])
 model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
 ```
+### Classification with multiple outputs
+* There's a different type of classification problem called a multi-label classification problem, which is where associate of each image, they could be multiple labels.
+* It is possible to build a neural network for each label
+* Alternatively, train one neural network with multiple outputs (the output layer is multiple sigmoid neurons)
 
 [<<Previous](../week-01/README.md) | [Next>>]()
