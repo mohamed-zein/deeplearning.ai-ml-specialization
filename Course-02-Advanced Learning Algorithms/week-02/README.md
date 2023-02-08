@@ -179,4 +179,28 @@ loss(a_{a}, \dots , a_{N}, \mathbf{y}) = \begin{dcases}
 \end{dcases}
 $$
 
+### Neural Network with Softmax output
+In order to build a Neural Network that can carry out _multi class classification_, we're going to take the _Softmax regression model_ and put it into essentially the **output layer** of a Neural Network.
+1. Specify the model $f_{\vec{\mathbf{W}},b}(\vec{\mathbf{X}})$
+    ```python
+    import tensorflow as tf
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import Dense
+
+    model = Sequential([               
+            Dense(units=25, activation='relu'),
+            Dense(units=15, activation='relu'),
+            Dense(units=10, activation='softmax')
+        ])
+    ```
+2. Specify loss and cost
+    ```python
+    from tf.keras.losses import SparseCategoricalCrossentropy
+    model.compile(loss=SparseCategoricalCrossentropy())
+    ```
+3. Train on data to minimize $J(\vec{\mathbf{W}}, b)$
+    ```python
+    model.fit(X, y, epochs=100)
+    ```
+
 [<<Previous](../week-01/README.md) | [Next>>]()
