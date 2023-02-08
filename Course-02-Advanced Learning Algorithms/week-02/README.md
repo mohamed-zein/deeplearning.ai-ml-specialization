@@ -202,5 +202,15 @@ In order to build a Neural Network that can carry out _multi class classificatio
     ```python
     model.fit(X, y, epochs=100)
     ```
+### Improved implementation of softmax
+To avoid issues with numerical roundoff, it is better to use the below code:
+```python
+model = Sequential([               
+        Dense(units=25, activation='relu'),
+        Dense(units=15, activation='relu'),
+        Dense(units=10, activation='linear')
+    ])
+model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
+```
 
 [<<Previous](../week-01/README.md) | [Next>>]()
