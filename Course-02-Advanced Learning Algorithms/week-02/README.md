@@ -151,14 +151,19 @@ $$
 
 $$
 \begin{align*}
-\mathbf{z}_{1} & = \vec{\mathbf{w}}_{1} \cdot \vec{\mathbf{x}} + b_{1} \quad \rightarrow \quad a_{1} = \frac{e^{\mathbf{z}_1}}{e^{\mathbf{z}_{1}} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 1|\vec{\mathbf{X}}) \newline
-\mathbf{z}_{2} & = \vec{\mathbf{w}}_{2} \cdot \vec{\mathbf{x}} + b_{2} \quad \rightarrow \quad a_{2} = \frac{e^{\mathbf{z}_{2}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 2|\vec{\mathbf{X}}) \newline
-\mathbf{z}_{3} & = \vec{\mathbf{w}}_{3} \cdot \vec{\mathbf{x}} + b_{3} \quad \rightarrow \quad a_{3} = \frac{e^{\mathbf{z}_{3}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 3|\vec{\mathbf{X}}) \newline
-\mathbf{z}_{4} & = \vec{\mathbf{w}}_{4} \cdot \vec{\mathbf{x}} + b_{4} \quad \rightarrow \quad a_{4} = \frac{e^{\mathbf{z}_{2}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 4|\vec{\mathbf{X}}) 
+\mathbf{z}_{1} = \vec{\mathbf{w}}_{1} \cdot \vec{\mathbf{x}} + b_{1} \quad \rightarrow \quad a_{1} = \frac{e^{\mathbf{z}_1}}{e^{\mathbf{z}_{1}} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 1|\vec{\mathbf{X}}) \newline
+\mathbf{z}_{2} = \vec{\mathbf{w}}_{2} \cdot \vec{\mathbf{x}} + b_{2} \quad \rightarrow \quad a_{2} = \frac{e^{\mathbf{z}_{2}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 2|\vec{\mathbf{X}}) \newline
+\mathbf{z}_{3} = \vec{\mathbf{w}}_{3} \cdot \vec{\mathbf{x}} + b_{3} \quad \rightarrow \quad a_{3} = \frac{e^{\mathbf{z}_{3}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 3|\vec{\mathbf{X}}) \newline
 \end{align*}
 $$
 
-* So the general formulas for the Softmax regression algorith ($N$ Possible outputs) $y = 1,2,3, \dots , N$ is:
+$$
+\begin{align*}
+\mathbf{z}_{4} = \vec{\mathbf{w}}_{4} \cdot \vec{\mathbf{x}} + b_{4} \quad \rightarrow \quad a_{4} = \frac{e^{\mathbf{z}_{4}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 4|\vec{\mathbf{X}}) 
+\end{align*}
+$$
+
+* So the general formulas for the Softmax regression algorith ( $N$ Possible outputs) $y = 1,2,3, \dots , N$ is:
 
 $$
 \begin{align*}
