@@ -132,4 +132,51 @@ model.fit(X, y, epochs=100)
 
 [Lab: ReLU activation](./code/C2_W2_Relu.ipynb)
 
+## Multiclass Classification
+### Multiclass
+_Multiclass Classification_ refers to classification problems where you can have more than just two possible output labels so not just 0 or 1.
+### Softmax
+* The _Softmax Regression Algorithm_ is a generalization of logistic regression, which is a binary classification algorithm to the multiclass classification contexts.
+* Recall Logistic regression (2 possible output values) 
+
+$$
+\mathbf{z} = \vec{\mathbf{w}} \cdot \vec{\mathbf{x}} + b \\
+a_{1} = g(\mathbf{z}) = \frac{1}{1+ e^{-\mathbf{z}}} = P(\mathbf{y} = 1|\vec{\mathbf{x}}) \\
+a_{2} = 1 - a_{1} = P(\mathbf{y} = 0|\vec{\mathbf{x}})
+$$
+
+* Softmax regression (4 possible output values) $y=1,2,3,4$
+
+$$
+\begin{align*}
+\mathbf{z}_{1} = \vec{\mathbf{w}}_{1} \cdot \vec{\mathbf{x}} + b_{1} \quad \rightarrow \quad a_{1} = \frac{e^{\mathbf{z}_1}}{e^{\mathbf{z}_{1}} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 1|\vec{\mathbf{X}}) \\
+\mathbf{z}_{2} = \vec{\mathbf{w}}_{2} \cdot \vec{\mathbf{x}} + b_{2} \quad \rightarrow \quad a_{2} = \frac{e^{\mathbf{z}_{2}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 2|\vec{\mathbf{X}}) \\
+\mathbf{z}_{3} = \vec{\mathbf{w}}_{3} \cdot \vec{\mathbf{x}} + b_{3} \quad \rightarrow \quad a_{3} = \frac{e^{\mathbf{z}_{3}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 3|\vec{\mathbf{X}}) \\
+\mathbf{z}_{4} = \vec{\mathbf{w}}_{4} \cdot \vec{\mathbf{x}} + b_{4} \quad \rightarrow \quad a_{4} = \frac{e^{\mathbf{z}_{2}}}{e^{\mathbf{z}_1} + e^{\mathbf{z}_2} + e^{\mathbf{z}_3} + e^{\mathbf{z}_4}} = P(\mathbf{y} = 4|\vec{\mathbf{X}}) \\
+\end{align*}
+$$
+
+* So the general formulas for the Softmax regression algorith ($N$ Possible outputs) $y = 1,2,3, \dots , N$ is:
+
+$$
+\begin{align*}
+\mathbf{z}_{j} = \vec{\mathbf{w}}_{j} \cdot \vec{\mathbf{x}} + b_{j} \qquad j = 1, \dots , N \\
+a_{j} = \frac{e^{\mathbf{z}_{j}}}{\sum\limits_{k=1}^{N}{e^{\mathbf{z}_{k}}}} = P(\mathbf{y} = j|\vec{\mathbf{X}}) \\
+\text{Note: } a_{1} + a_{2} + \dots + a_{N} = 1
+\end{align*}
+$$
+
+
+#### Cost for Softmax regression
+The Softmax Crossentropy loss is:
+
+$$
+loss(a_{a}, \dots , a_{N}, \mathbf{y}) = \begin{dcases}
+-\log{a_{1}} \quad \text{if } \mathbf{y} = 1 \\
+-\log{a_{2}} \quad \text{if } \mathbf{y} = 2 \\
+\qquad \vdots \\
+-\log{a_{N}} \quad \text{if } \mathbf{y} = N \\
+\end{dcases}
+$$
+
 [<<Previous](../week-01/README.md) | [Next>>]()
