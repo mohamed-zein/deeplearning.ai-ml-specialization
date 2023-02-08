@@ -219,4 +219,6 @@ model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
 
 [Lab: Softmax](./code/C2_W2_SoftMax.ipynb)
 
+[Lab: Multiclass](./code/C2_W2_Multiclass_TF.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
