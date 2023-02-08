@@ -217,4 +217,6 @@ model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
 * It is possible to build a neural network for each label
 * Alternatively, train one neural network with multiple outputs (the output layer is multiple sigmoid neurons)
 
+[Lab: Softmax](./code/C2_W2_SoftMax.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
