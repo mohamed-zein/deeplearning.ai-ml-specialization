@@ -228,4 +228,6 @@ model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
 
 [Lab: Multiclass](./code/C2_W2_Multiclass_TF.ipynb)
 
+## Additional Neural Network Concepts
+
 [<<Previous](../week-01/README.md) | [Next>>]()
