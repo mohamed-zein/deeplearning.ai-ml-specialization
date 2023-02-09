@@ -241,4 +241,30 @@ model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
     * Faster computation.
     * Need less training data (less prone to overfitting)
 
+## Back Propagation
+### What is a derivative?
+#### Derivative notation
+* If $J(w)$ is a function of one variable ( $w$ ):
+
+$$
+\frac{\mathrm{d}}{\mathrm{d}w} J(w)
+$$
+* If $J(w_{1}, w_{2}, \dots , w_{n})$ is a function more than one variable:
+
+$$
+\frac{\partial}{\partial w} J(w)
+$$
+
+#### Derivative with Python
+* The Python library [SymPy](https://www.sympy.org/en/index.html) helps us with derivative
+    ```python
+    import sympy
+    J, w = sympy.symbols('J,w')
+    J = w ** 2
+    J
+    dJ_dw = sympy.diff(J)
+    dJ_dw
+    dJ_dw.subs([(w,2)])
+    ```
+
 [<<Previous](../week-01/README.md) | [Next>>]()
