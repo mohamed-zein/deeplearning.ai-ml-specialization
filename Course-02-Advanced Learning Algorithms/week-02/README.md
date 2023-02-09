@@ -275,4 +275,4 @@ $$
 
 [Practice Lab: Neural Networks for Multiclass classification](./assignment/C2_W2_Assignment.ipynb)
 
-[<<Previous](../week-01/README.md) | [Next>>]()
+[<<Previous](../week-01/README.md) | [Next>>](../week-03/README.md)
