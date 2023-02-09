@@ -273,4 +273,6 @@ $$
 
 [Lab: Back propagation](./code/C2_W2_Backprop.ipynb)
 
+[Practice Lab: Neural Networks for Multiclass classification](./assignment/C2_W2_Assignment.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
