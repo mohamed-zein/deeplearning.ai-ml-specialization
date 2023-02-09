@@ -266,5 +266,11 @@ $$
     dJ_dw
     dJ_dw.subs([(w,2)])
     ```
+### Computation graph
+![Back prop](./images/derivatives-01.jpg)
+
+[Lab: Derivatives](./code/C2_W2_Derivatives.ipynb)
+
+[Lab: Back propagation](./code/C2_W2_Backprop.ipynb)
 
 [<<Previous](../week-01/README.md) | [Next>>]()
