@@ -229,5 +229,11 @@ model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
 [Lab: Multiclass](./code/C2_W2_Multiclass_TF.ipynb)
 
 ## Additional Neural Network Concepts
+### Advanced Optimization
+* Recently, there is other optimization algorithms better than Gradient Descent.
+* A commonly used algotithm is **Adam** (Adaptive Moment estimation) which can adjust the learning rate $\alpha$ automatically:
+    * If the the steps towards the minimum is in the same direction so it increases the learning rate $\alpha$ to go faster.
+    * If the steps is oscilating and changes direction then it decreases the learning rate $\alpha$ to ga slower.
+    * It doesn't use a global $\alpha$ but seperate value for each parameter.
 
 [<<Previous](../week-01/README.md) | [Next>>]()
