@@ -332,4 +332,4 @@ $$
 
 [Practice Lab: Neural Networks for Binary Classification](./assignment/C2_W1_Assignment.ipynb)
 
-[<<Previous](../README.md) | [Next>>]()
+[<<Previous](../README.md) | [Next>>](../week-02/README.md)
