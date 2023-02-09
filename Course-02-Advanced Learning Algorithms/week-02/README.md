@@ -235,5 +235,10 @@ model.compile(loss=SparseCategoricalCrossentropy(from_logits=True))
     * If the the steps towards the minimum is in the same direction so it increases the learning rate $\alpha$ to go faster.
     * If the steps is oscilating and changes direction then it decreases the learning rate $\alpha$ to ga slower.
     * It doesn't use a global $\alpha$ but seperate value for each parameter.
+### Additional Layer Types
+* `Dense` Layer: Each neuron output is a function of all the activation outputs of the previous layer.
+* **Convolutional** Layer: Each neuron only looks at part of the previous layer's inputs.
+    * Faster computation.
+    * Need less training data (less prone to overfitting)
 
 [<<Previous](../week-01/README.md) | [Next>>]()
