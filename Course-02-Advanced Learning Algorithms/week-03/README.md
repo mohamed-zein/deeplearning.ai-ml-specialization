@@ -74,4 +74,83 @@ $$
 
 [Lab: Model Evaluation and Selection](./code/C2W3_Lab_01_Model_Evaluation_and_Selection.ipynb)
 
+## Bias and variance
+### Diagnosing bias and variance
+![Balance/Variance](./images/bias-variance-01.jpg)
+* **High Bias**: Underfit
+    * $J_{traing}$ is high.
+    * $J_{cv}$ is high. $J_{traing} \approx J_{cv}$
+* **High Variance**: Overfit
+    * $J_{traing}$ is/maybe low.
+    * $J_{cv}$ is high. $J_{cv} >> J_{traing}$
+* **Just Right**:
+    * $J_{traing}$ is low.
+    * $J_{cv}$ is low.
+
+It rarely happens but for some reason a model can have **high bias and high variance** where $J_{train}$ will be high and $J_{cv} >> J_{train}$
+
+### Regularization and bias/variance
+* Recall Linear Regression model:
+
+$$
+\begin{align*}
+f_{\vec{\mathbf{w}},b}(x) & = \mathbf{w}_{1}x + \mathbf{w}_{2}x^{2} + \mathbf{w}_{3}x^{3} + \mathbf{w}_{4}x^{4} + b \newline
+J(\vec{\mathbf{w}},b) & = \frac{1}{2m} \sum\limits_{i=1}^{m}{ \left(f_{\vec{\mathbf{w}},b}\left(\vec{\mathbf{x}}^{(i)}\right) - \mathbf{y}^{(i)} \right)^{2} } + \frac{\lambda}{2m} \sum\limits_{j=1}^{n}{\mathbf{w}_{j}^{2}}
+\end{align*}
+$$
+
+* Large $\lambda \implies$ High bias (underfit)
+    * $\lambda = 10,000 \implies \mathbf{w}_{1} \approx 0, \mathbf{w}_{2} \approx 0 \implies f_{\vec{\mathbf{w}},b}(\vec{\mathbf{X}}) \approx 0$
+    * $J_{train}(\vec{\mathbf{w}},b)$ is large
+* Small $\lambda \implies$ High variance (Overfit)
+    * $\lambda = 0 \implies$ no regularization.
+    * $J_{train}(\vec{\mathbf{w}},b)$ is small but $J_{cv}(\vec{\mathbf{w}},b)$ is large.
+* To select the best value for $\lambda$, we will use an approach similar to one used in [Model selection and training/cross validation/test sets](#model-selection-and-trainingcross-validationtest-sets)
+
+### Establishing a baseline level of performance
+What is the level of error you can reasonably hope to get to?
+* Human level performance.
+* Competing algorithms performance.
+* Guess based on experience.
+
+### Learning curves
+Learning curves are a way to help understand how a learning algorithm is doing as a function of the amount of experience it has, whereby experience, we mean, for example, the number of training examples it has.
+* As $m_{train}$, the training set size gets bigger, then you learn a better model and so the cross-validation error goes down.
+* As the training set gets bigger, the training error increases because it's harder to fit all of the training examples perfectly.
+![Learning Curve](./images/learning-curve-01.jpg)
+
+#### High Bias
+* If a learning algorithm suffers from high bias, getting more training data will not (by itself) help much.
+![High Bias](./images/learning-curve-02.jpg)
+
+#### High Variance
+* If a learning algorithm suffers from high variance, getting more training data is likely to help.
+![High Variance](./images/learning-curve-03.jpg)
+
+### Deciding what to try next revisited
+
+$$
+J(\vec{\mathbf{w}},b) = \frac{1}{2m} \sum\limits_{i=1}^{m}{ \left(f_{\vec{\mathbf{w}},b}\left(\vec{\mathbf{x}}^{(i)}\right) - \mathbf{y}^{(i)} \right)^{2} } + \frac{\lambda}{2m} \sum\limits_{j=1}^{n}{\mathbf{w}_{j}^{2}}
+$$
+
+If the results of regularized linear regression makes large errors in prediction:
+Action | Fixes
+-------|------
+Get more training example | High variance
+Try smaller set of features | High Variance
+Try increasing $\lambda$ | High Variance
+Try getting additional features | High Bias
+Try adding polynomial features | High Bias
+Try decreasing $\lambda$ | High Bias
+
+### Bias/variance and neural networks
+* Typically there is a tradeoff between:
+    * Simple model $\rightarrow$ High Bias.
+    * Complex model $\rightarrow$ High Variance.
+* Large neural networks when trained on small term moderate sized datasets are low bias machines.
+![Neural Network and bias variance](./images/bias-variance-neural-01.jpg)
+* A large neural network will usually do as well or better than a smaller one so long as regularization is chosen apporpriately.
+
+[Lab: Diagnosing Bias and Variance](./code/C2W3_Lab_02_Diagnosing_Bias_and_Variance.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
