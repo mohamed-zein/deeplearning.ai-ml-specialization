@@ -153,4 +153,147 @@ Try decreasing $\lambda$ | High Bias
 
 [Lab: Diagnosing Bias and Variance](./code/C2W3_Lab_02_Diagnosing_Bias_and_Variance.ipynb)
 
+## Machine learning development process
+### Iterative loop of ML development
+![Iterative loop of ML development](./images/ml-development-01.jpg)
+### Error analysis
+* Refers to manually exmining the misclassified examples in the cross validation set and try to group them based on common traits.
+    * If the number of missclassified examples is huge, we can instead look into a reasonable random sample.
+* This can be useful to understand how to proceed with improving the learning algorithm.
+* One limitation of the _Error Analysis_ is that it's much easier to do for problems that humans are good at.
+### Adding data
+* Getting more data can be slow and expensive.
+* It is better to add more data of the types where [error analysis](#error-analysis) has indicated might help.
+* Another techniques to increase the training data set are:
+    * [Data Augmentation](#data-augmentation).
+    * [Data Synthesis](#data-synthesis).
+#### Data Augmentation
+* **Data Augmentation**: refers to modifying an existing training example to create a new training example.
+* These would be ways of taking a training example $x, y$. And applying a distortion or transformation to the input $x$ ,in order to come up with another example that has the same label $y$.
+![Data Augmentation](./images/data-augmentation-01.jpg)
+![Data Augmentation by introducing distortions](./images/data-augmentation-02.jpg)
+* Examples of problems that can use Data Augmentation:
+    * Computer Vision.
+    * Speech recognition.
+> **Data Augmentation Tips**  
+> * The changes or the distortions you make to the data, should be representative of the types of noise or distortions in the test set.
+> * Usually doesn't help to add purely random/meaningless noise to your data.
+
+#### Data Synthesis
+* **Data Synthesis**: using artificial data inputs to create a new training example.
+* Examples:
+    * Artifical data synthesis for photo OCR by generating text using different fonts and resolution.
+    ![Data Synthesis for photo OCR](./images/data-synthesis-01.jpg)
+#### Engineering the data used by your system
+* An AI system is:
+
+$$
+\text{AI} = \underset{\text{algorithm/model}}{\text{Code }} + \text{ Data}
+$$
+
+* Conventional **model-centric** approach:
+
+$$
+\text{AI} = \underset{\text{algorithm/model}}{\overbrace{\text{Code }}^{\text{Focus work on this}}} + \text{ Data}
+$$
+
+* **Data-centric** approach:
+
+$$
+\text{AI} = \underset{\text{algorithm/model}}{\text{Code }} + \overbrace{\text{ Data}}^{\text{Focus work on this}}
+$$
+
+### **Transfer learning**: using data from a different task
+* **Transfer Learning**: is using a previously trained neural network to solve a new problem.
+    * _Option 1_: Only train the output layer $\rightarrow$ works with very small data sets.
+    * _Option 2_: train all parameters. In this case, the hidden layers will be intialized with the values from the initial training.
+* We can consider the **Transfer Leaning** consists of 2 steps:
+    1. Supervised Pretraining.
+    2. Fine Tuning.
+
+> One restriction of pre-training though, is that the image type $\mathbf{x}$ has to be the same for the pre-training and fine-tuning steps.
+
+#### Transfer learning summary
+1. Download neural network parameters pretrained on a large dataset with the same input type (e.g. images, audio, text) as your application (or train yout own).
+2. Further train (fine tune) the network on your own data.
+
+### Full cycle of a machine learning project
+![Full cycle of a machine learning project](./images/ML-Full-Cycle-01.jpg)
+#### Deployment
+![ML Deployment](./images/ml-deployment-01.jpg)
+* We deploy our _Trained ML Model_ into an **Inference Server**.
+* Then a **Client App** (e.g. Mobile app) can make an **API Call** to the inference server with parameter(s) $\mathbf{x}$ of the input of the _ML Model_.
+* The Inference Server returns a prediction/inference $\hat{\mathbf{y}}$ to the client app.
+* Software engineering may be needed for:
+    * Ensure reliable and effecient predictions.
+    * Scaling.
+    * Logging.
+    * System monitoring.
+    * Model updates.
+
+### Fairness, bias, and ethics
+#### Bias
+* Hiring tool that discriminates against women.
+* Facial recognition system matching dark skinned individuals to criminal mugshots.
+* Biased bank loans approvals.
+* Toxic effect of reinforcing negative streotypes.
+#### Adverse use cases
+* Deepfakes.
+* Spreading toxic/incendiary speech through optimizing for engagement.
+* Generating fake content for commercial or political purposes.
+* Using ML to build harmeful products, commits fraud etc.
+    * Spam vs anti-spam.
+    * Fraud vs anti-fraud.
+#### Guidelines
+* Get a diverse team to brainstorm things that might go wrong, with emphasis on possible harm to vulnerable groups.
+* Carry out literature search on standard/guidelines for your industry.
+* Audit systems against possible harm prior to deployment.
+![ML System Audit](./images/ml-bias-01.jpg)
+* Develop mitigation plan (if applicable), and after deployment, monitor for possible harm.
+## Skewed datasets
+### Error metrics for skewed datasets
+* If you're working on a machine learning application where the ratio of positive to negative examples is very skewed, very far from 50-50, then it turns out that the usual error metrics like accuracy don't work that well.
+* Assuming we are training a classifier $f_{\vec{\mathbf{W}},b}(\vec{\mathbf{X}})$ to predict if a patient has a disease.
+    * $\mathbf{y}=1$ if the disease is present.
+    * $\mathbf{y}=1$ otherwise.
+    * In our test dataset, only 0.5% of patients have the disease.
+    * In such case, even a dump algorithm `print("y=0")` will have less than 1% error!
+* When working on problems with skewed data sets, we usually use a different error metric rather than just classification error to figure out how well our learning algorithm is doing.
+* In particular, a common pair of error metrics are [precision and recall](#precisionrecall).
+#### Precision/Recall
+* We consider $\mathbf{y} = 1$ represents the precense or rare class we want to detect.
+* We construct what's called a **Confusion Matrix**, which is a two-by-two matrix or a two-by-two table that looks like this:
+![Confusion Matrix](./images/confusion-matrix-01.jpg)
+* Based on the Confusion Matrix, we can calculate the metrics as follows:
+    * **Precision**: of all the patients where we predicted $\mathbf{y}=1$, what fraction actually have the rare disease?
+
+    $$
+    \frac{\text{True Positives}}{\text{\# Predicted Positives}} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
+    $$
+
+    * **Recall**: of all the patients that actually have the rare disease, what fraction did we correctly detect as having it?
+
+    $$
+    \frac{\text{True Positives}}{\text{\# Actual Positives}} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
+    $$
+
+### Trading off precision and recall
+* It turns out that in practice there's often a trade-off between precision and recall. 
+* Suppose we want to predict $\mathbf{y} = 1$ (rare disease) only if very confident.
+    * Higher Precision and Lower Recall.
+* Suppose we want to avoid missing too many cases (rare disease) then when in doubt predict $\mathbf{y} = 1$.
+    * Lower Precision and Higher Recall.
+* Plotting precision and recall for different values of the threshold allows you to pick a point that you want.
+![Precision vs Recall](./images/precision-recall-01.jpg)
+* If you want to automatically trade-off precision and recall rather than have to do so yourself, there is another metric called the [F1 score](#f1-score) that is sometimes used to automatically combine precision recall to help you pick the best value or the best trade-off between the two.
+#### F1 Score
+* The F1 score is a way of computing an average of sorts that pays more attention to whichever is lower.
+* With _Precision_ is $P$ and _Recall_ is $R$, the formula for $F_{1} \text{ score}$ is calculated using the _Harmonic Mean_:
+
+$$
+F_{1} \text{ score} = \frac{1}{{\frac{1}{2}}\left({\frac{1}{P}} + {\frac{1}{R}} \right)} = 2 \frac{PR}{P + R}
+$$
+
+* Then we can pick the algorithm with the highest $F_{1} \text{ score}$.
+
 [<<Previous](../week-02/README.md) | [Next>>]()
