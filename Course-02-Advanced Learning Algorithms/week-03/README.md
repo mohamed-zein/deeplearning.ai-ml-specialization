@@ -296,4 +296,6 @@ $$
 
 * Then we can pick the algorithm with the highest $F_{1} \text{ score}$.
 
+[Practice Lab: Advice for Applying Machine Learning](./assignment/C2_W3_Assignment.ipynb)
+
 [<<Previous](../week-02/README.md) | [Next>>]()
