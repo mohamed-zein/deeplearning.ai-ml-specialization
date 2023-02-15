@@ -71,18 +71,19 @@ When ploting the data of breast cancer (_Age_ & _Tumor size_ vs _Tumor Type_)
 ### Terminology
 * **Training Set**: Data used to train the model.
     * Notation:
-   $$
-   \begin{split}
-   x = & \text{ "input" variable} \\
-   & \text{ "feature" variable} \\
-   y = & \text{ "output" variable} \\
-   & \text{ "target" variable} \\
-   m = & \text{ number of training examples} \\
-   (x, y) = & \text{ single training example} \\
-   (x^{(i)}, y^{(i)}) = & i^{th} \text{ training example} \\
-   & (1^{\text{st}}, 2^{\text{nd}}, 3^{\text{rd}} \dots)
-   \end{split}
-   $$
+
+$$
+\begin{split}
+x = & \text{ "input" variable} \\
+& \text{ "feature" variable} \\
+y = & \text{ "output" variable} \\
+& \text{ "target" variable} \\
+m = & \text{ number of training examples} \\
+(x, y) = & \text{ single training example} \\
+(x^{(i)}, y^{(i)}) = & i^{th} \text{ training example} \\
+& (1^{\text{st}}, 2^{\text{nd}}, 3^{\text{rd}} \dots)
+\end{split}
+$$
 
 * **Training set** in Supervised Learning includes both
     * Input **features**.

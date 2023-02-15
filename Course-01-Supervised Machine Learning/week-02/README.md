@@ -44,11 +44,13 @@ $$
 When using Vectorization when writing your machine learning code, it makes your program shorter and also run more effeciently.
 ### Vectorization example
 $$
-\text{Parameters and features:} \newline
-\vec{\mathbf{w}} = \begin{bmatrix} w_{1} & w_{2} & w_{3} \end{bmatrix} \newline
-b \text{ is a number} \newline
-\vec{\mathbf{x}} = \begin{bmatrix} \mathbf{x}_{1} & \mathbf{x}_{2} & \mathbf{x}_{3} \end{bmatrix} \newline
-n = 3
+\begin{align*}
+& \text{Parameters and features:} \newline
+& \vec{\mathbf{w}} = \begin{bmatrix} w_{1} & w_{2} & w_{3} \end{bmatrix} \newline
+& b \text{ is a number} \newline
+& \vec{\mathbf{x}} = \begin{bmatrix} \mathbf{x}_{1} & \mathbf{x}_{2} & \mathbf{x}_{3} \end{bmatrix} \newline
+& n = 3
+\end{align*}
 $$
 
 In Python we are going to define vectors $\vec{\mathbf{w}}$ and $\vec{\mathbf{x}}$ as Arrays of Linear Algebra library [NumPy](https://numpy.org/):
