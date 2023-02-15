@@ -268,13 +268,13 @@ $$
 * **Precision**: of all the patients where we predicted $\mathbf{y}=1$, what fraction actually have the rare disease?
 
 $$
-\frac{\text{True Positives}}{\text{\# Predicted Positives}} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
+\frac{\text{True Positives}}{\text{Count Predicted Positives}} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}
 $$
 
 * **Recall**: of all the patients that actually have the rare disease, what fraction did we correctly detect as having it?
 
 $$
-\frac{\text{True Positives}}{\text{\# Actual Positives}} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
+\frac{\text{True Positives}}{\text{Count Actual Positives}} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}
 $$
 
 ### Trading off precision and recall
