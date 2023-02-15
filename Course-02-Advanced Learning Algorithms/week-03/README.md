@@ -298,4 +298,4 @@ $$
 
 [Practice Lab: Advice for Applying Machine Learning](./assignment/C2_W3_Assignment.ipynb)
 
-[<<Previous](../week-02/README.md) | [Next>>]()
+[<<Previous](../week-02/README.md) | [Next>>](../week-04/README.md)
