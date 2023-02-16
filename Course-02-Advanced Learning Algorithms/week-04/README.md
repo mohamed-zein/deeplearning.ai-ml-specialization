@@ -127,10 +127,11 @@ $$
 * The key idea is that even with this [sampling with replacement procedure](#generating-a-tree-sample-bagged-decision-tree) sometimes you end up with always using the same split at the root node and very similar splits near the root note. 
 * There's one modification to the algorithm to further try to randomize the feature choice at each node that can cause the set of trees you learn to become more different from each other.
 * At each node, when choosing a feature to use to split:
-    * If $n$ features are available, pick a random subset of $k$ features where $k<n$.
+    * If $n$ features are available, pick a random subset of $k$ features where $k < n$ .
     * Allow the algorithm to only choose from that subset of features $k$.
-**Note**  
-When $n$ is large, say $n$ is dozens or 10's or even hundreds. A typical choice for the value of $k$ would be to choose it to be square root of $n$: $k = \sqrt{n}$
+
+> **Note**  
+> When $n$ is large, say $n$ is dozens or 10's or even hundreds. A typical choice for the value of $k$ would be to choose it to be square root of $n$: $k = \sqrt{n}$
 ### XGBoost
 * _XGBoost_ is by far the most commonly used way or implementation of decision tree ensembles or decision trees.
     * It runs quickly
