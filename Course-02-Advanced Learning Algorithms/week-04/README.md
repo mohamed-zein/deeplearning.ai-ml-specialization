@@ -183,5 +183,7 @@ When $n$ is large, say $n$ is dozens or 10's or even hundreds. A typical choice 
 * When building a system of multiple models working together, it might be easier to string together multiple neural networks.
 
 [Lab: Tree Ensembles](./code/C2_W4_Lab_02_Tree_Ensemble.ipynb)
+----------
+[Assignment: Practice Lab: Decision Trees](./assignment/C2_W4_Decision_Tree_with_Markdown.ipynb)
 
 [<<Previous](../week-03/README.md) | [Next>>]()
