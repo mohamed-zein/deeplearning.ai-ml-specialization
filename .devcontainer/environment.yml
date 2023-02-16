@@ -5,3 +5,5 @@ channels:
 dependencies:
   - tensorflow
   - pylint
+  - pydot
+  - py-xgboost
