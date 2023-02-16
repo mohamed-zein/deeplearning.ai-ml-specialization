@@ -92,4 +92,96 @@ $$
 
 [Lab: Decision Trees](./code/C2_W4_Lab_01_Decision_Trees.ipynb)
 
+## Tree ensembles
+### Using multiple decision trees
+* One of the weaknesses of using a single decision tree is that that decision tree can be highly sensitive to small changes in the data.
+* One solution to make the algorithm less sensitive or more robust is to build not one decision tree, but to build a lot of decision trees, and we call that a **Tree Ensemble**.
+* If you had a new test example that you wanted to classify, then what you would do is run all three of these trees on your new example and get them to vote on whether it's the final prediction.
+### Sampling with replacement
+* In order to build a tree ensemble, we're going to need a technique called **Sampling with Replacement**.
+    * The term with replacement means that if I take out the next token, I'm going to take this, and put it back in, and shake it up again, and then take on another one. 
+    * Replace it. That's a little replacement part. 
+    * Then go again.
+![Sampling with replacement](./images/tree-ensemble-01.jpg)
+
+>**Note**  
+>Notice that the with replacement part of this is critical because if I were not replacing a token every time I sample, then if I were to pour four tokens from my bag of four, I will always just get the same four tokens.
+* The way that sampling with replacement applies to building an ensemble of trees is as follows:
+    * We are going to construct multiple random training sets that are all slightly different from our original training set. 
+    * We're going to create a new random training set of 10 examples of the exact same size as the original data set.
+    * We get another repeats the example, and so on and so forth. Until eventually you end up with 10 training examples, some of which are repeats.
+* The process of sampling with replacement, lets you construct a new training set that's a little bit similar to, but also pretty different from your original training set.
+* This would be the key building block for building an ensemble of trees. 
+### Random forest algorithm
+#### Generating a tree sample: Bagged decision tree
+* Given training set of size $m$
+* For $b=1$ to $B$:
+    * Use sampling with replacement to create a new training set of size $m$.
+    * Train a decision tree on the new dataset.
+* This specific instance creation of tree ensemble is sometimes also called a **Bagged decision tree**.
+>**Notes**:  
+>* Typical choice of $B$ the number of such trees you build is around 100.
+>    * People recommend any value from 64 to 228.
+>* Setting $B$ to be larger, never hurts performance, but beyond a certain point, you end up with diminishing returns and it doesn't actually get that much better when $B$ is much larger than say 100 or so.
+#### Random forest
+* The key idea is that even with this [sampling with replacement procedure](#generating-a-tree-sample-bagged-decision-tree) sometimes you end up with always using the same split at the root node and very similar splits near the root note. 
+* There's one modification to the algorithm to further try to randomize the feature choice at each node that can cause the set of trees you learn to become more different from each other.
+* At each node, when choosing a feature to use to split:
+    * If $n$ features are available, pick a random subset of $k$ features where $k<n$.
+    * Allow the algorithm to only choose from that subset of features $k$.
+**Note**  
+When $n$ is large, say $n$ is dozens or 10's or even hundreds. A typical choice for the value of $k$ would be to choose it to be square root of $n$: $k = \sqrt{n}$
+### XGBoost
+* _XGBoost_ is by far the most commonly used way or implementation of decision tree ensembles or decision trees.
+    * It runs quickly
+    * The open source implementations are easily used
+    * It has also been used very successfully to win many machine learning competitions as well as in many commercial applications.
+#### Boosted trees intution
+* Given training set of size $m$
+* For $b=1$ to $B$:
+    * Use sampling with replacement to create a new training set of size $m$.
+        * Instead of picking from all examples with equal ($^1/_m$) probability, make it more likely to pick misclassified examples from previously trained trees.
+    * Train a decision tree on the new dataset.
+#### XGBoost (eXtreme Gradient Boosting)
+* Open source implementation of boosted trees.
+* Fast effecient implementation.
+* Good choice of default splitting criteria and criteria for when to stop splitting.
+* Built in regularization to prevent overfitting.
+* Highly competitive algorithm for machine learning competitions.
+
+#### Using XGBoost
+* Classification
+    ```python
+    from xgboost import XGBClassifier
+
+    model = XGBClassifier()
+
+    model.fit(X_train, Y_train)
+    y_pred = model.predict(X_test)
+    ```
+* Regression
+    ```python
+    from xgboost import XGBRegressor
+
+    model = XGBRegressor()
+
+    model.fit(X_train, Y_train)
+    y_pred = model.predict(X_test)
+    ```
+### When to use Decision Trees vs Neural Network
+#### Decision Trees and Tree Ensembles
+* Work well on tabular (structured) data.
+* Not recomended for unstructured data (images, audio, text)
+* Fast to train.
+* Small decision trees may be human interpretable.  
+    > XGBoost is recomended for most of the applications
+
+#### Neural Networks
+* Works well on types of data, including tabular (structured) and unstructured data.
+* May be slower than a decision tree.
+* Works with transfer learning.
+* When building a system of multiple models working together, it might be easier to string together multiple neural networks.
+
+[Lab: Tree Ensembles](./code/C2_W4_Lab_02_Tree_Ensemble.ipynb)
+
 [<<Previous](../week-03/README.md) | [Next>>]()
