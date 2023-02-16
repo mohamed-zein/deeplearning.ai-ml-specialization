@@ -178,7 +178,7 @@ To address overfitting of a model:
 * Regularization tries to make parameters $w_{1}, w_{2}, \dots , w_{n}$ small to reduce overfitting.
 * If we have large number of features, it will difficult to know which features to select or reduce.
 * The way **Regularization** is typically implemented is to penalize all the features, more precisely, penalize $w_{j}$ parameters.
-* So thne cost function with regularization would be:
+* So then cost function with regularization would be:
 
 $$
 \min_{\vec{\mathbf{w}}, b} J(\vec{\mathbf{w}}, b) = \min_{\vec{\mathbf{w}}, b} \left[\underbrace{\overbrace{\frac{1}{2m} \sum\limits_{i=1}^{m} \left(f_{\vec{\mathbf{w}}, b} \left(\vec{\mathbf{x}}^{(i)} \right) - y^{(i)} \right)^{2}}^{\text{Mean Squared Error}}}_\text{Fit the data} + \underbrace{\overbrace{\frac{\lambda}{2m} \sum\limits_{j=1}^{n} w^{2}_{j}}^{\text{Regularization term}}}_{\text{Keep } w_{j} \text{ small}} \right]
@@ -270,4 +270,4 @@ $$
 
 [Lab: Regularization](./code/C1_W3_Lab09_Regularization_Soln.ipynb)
 
-[<<Previous](../week-02/README.md) | [Next>>]()
+[<<Previous](../week-02/README.md) | [Next>>](../../Course-02-Advanced%20Learning%20Algorithms/README.md)
