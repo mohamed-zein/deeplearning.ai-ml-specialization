@@ -252,7 +252,7 @@ $$
 To add a regularization term for Logistic regression
 
 $$
-J(\vec{w}, b) & = -\frac{1}{m} \sum\limits_{i=1}^{m} \left[y^{(i)} \log{\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right)\right)} + \left(1-y^{(i)}\right)\log{\left(1 - f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right)\right)} \right] + \frac{\lambda}{2m} \sum\limits_{j=1}^{n} w_{j}^{2}
+J(\vec{w}, b) = -\frac{1}{m} \sum\limits_{i=1}^{m} \left[y^{(i)} \log{\left(f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right)\right)} + \left(1-y^{(i)}\right)\log{\left(1 - f_{\vec{w},b}\left(\vec{\mathbf{x}}^{(i)}\right)\right)} \right] + \frac{\lambda}{2m} \sum\limits_{j=1}^{n} w_{j}^{2}
 $$
 
 #### Implementing Gradient descent for Regularized logistic regression
