@@ -76,7 +76,115 @@ $$
     2. Plot the cost function $J$ as a function of the number of clusters.
 
 [Assignment Lab: k-means](./assignment-kmeans/C3_W1_KMeans_Assignment.ipynb)
+
 ----------
 
+## Anomaly detection
+### Finding unusual events
+* **Anomaly detection** algorithms look at an unlabeled dataset of normal events and thereby learns to detect or to raise a red flag for if there is an unusual or an anomalous event.
+#### Density Estimation
+![Density Estimation](./images/anomaly-detection-01.jpg)
+* What _Density Estimation_ means is, when you're given your training sets of these $m$ examples
+    1. Build a model for the probability of $X$.
+        * The learning algorithm will try to figure out what are the values of the features $x_1$ and $x_2$ that have high probability and what are the values that are less likely or have a lower chance or lower probability of being seen in the data set. 
+    2. compute the probability of $X_{test}$.
+        * If the $p(x_{test})$ is less than some small threshold or some small number $\epsilon$, we will raise a flag to say that this could be an anomaly.
+#### Anomaly Detecion examples
+* _Fraud detecion_: Indentify unusual users by checking which have $p(x) < \epsilon$.
+* _Manufacturing_: For quality assurance.
+* _Monitoring_ computers in a data center:
+### Gaussian (normal) distribution
+Say $x$ is a number.  
+Probability of $x$ is determined by a Gaussian with mean $\mu$, variance $\sigma^{2}$
+![Gaussian distribution](./images/gaussian-distribution-01.jpg)
+
+$$
+\begin{align*}
+p(x) & = \frac{1}{\sqrt{2\pi} \sigma}  e^\frac{-(x-\mu)^{2}}{2 \sigma^{2}} \newline
+\text{Where: } \quad \mu & = \frac{1}{m} \sum\limits_{i=1}^{m}{x^{(i)}} \newline
+\sigma^{2} & = \frac{1}{m} \sum\limits_{i=1}^{m}{(x^{(i)} - \mu)^{2}}
+\end{align*}
+$$
+
+### Anomaly detection algorithm
+#### Density Estimation
+* Training set: $\left\{\ {\vec{\mathbf{x}}}^{(1)}, {\vec{\mathbf{x}}}^{(2)}, \dots , {\vec{\mathbf{x}}}^{(m)} \right\}$
+* Each example ${\vec{\mathbf{x}}}^{(i)}$ has $n$ features.
+* We will build a model or estimate the probability for $p(x)$ which is going to be as follows:
+    * ${\vec{\mathbf{x}}}$ is a feature vector ${\vec{\mathbf{x}}}^{(i)} = \begin{bmatrix} x_{1} \\ x_{2} \\ \vdots \\ x_{n} \end{bmatrix}$.
+    * The model for $p(\vec{\mathbf{x}})$ is going to be:
+
+$$
+\begin{align*}
+p(\vec{\mathbf{x}}) & = p(x_{1};\mu_{1};{\sigma_{1}}^{2}) * p(x_{2};\mu_{2};{\sigma_{2}}^{2}) * p(x_{3};\mu_{3};{\sigma_{3}}^{2}) * \cdots * * p(x_{n};\mu_{n};{\sigma_{j}}^{n}) \newline
+& = \prod\limits_{j=1}^{n}{p(x_{j}; \mu_{j}; {\sigma_{j}}^{2})}
+\end{align*}
+$$
+
+#### Anomaly detection algorithm
+1. Choose $n$ features $x_{i}$ that you think might be indicative of anamolous examples.
+2. Fit parameters $\mu_{1}, \cdots , \mu_{n}, {\sigma_{1}}^{2}, \cdots , {\sigma_{n}}^{2}$
+3. Given new example $x$, compute $p(x)$:
+
+$$
+\begin{align*}
+p(\mathbf{x}) & = \prod\limits_{j=1}^{n}{p(x_{j}; \mu_{j}; {\sigma_{j}}^{2})} \newline
+& = \prod\limits_{j=1}^{n}{ \frac{1}{\sqrt{2\pi} \sigma_{j}} e^{(-\frac{(x_{j} - \mu_{j})}{2 {\sigma_{j}^{2}}})} } \\
+& \boxed{\text{Anomaly if } p(x) < \epsilon}
+\end{align*}
+$$
+
+### Developing and evaluating an anomaly detection system
+* When developing a learning algorithm (choosing feature, etc), making decisions is much easier if we have a way of evaluating our learning algorithm.
+* While anomaly detection is unsupervised algorithm, it is still useful to have some labeled data, of anomalous and non-anomalous examples.
+    * Anomalous labels will have $\mathbf{y}=1$.
+    * Non-anomalous labels will have $\mathbf{y}=0$.
+* Training set: ${\mathbf{x}}^{(1)}, {\mathbf{x}}^{(2)}, \cdots , {\mathbf{x}}^{(m)}$ (Assume all are normal examples/not anomalous).
+* To evaluate the algorithm, come up with a way to have a small number of anomalous examples so we can create cross validation set and test set.
+
+$$
+\begin{align*}
+\text{Cross validation set: }&  \left( x_{cv}^{(1)}, y_{cv}^{(1)} \right), \dots , \left( x_{cv}^{(m_{cv})}, y_{cv}^{(m_{cv})} \right) \newline
+\text{Test set: } & \left( x_{test}^{(1)}, y_{test}^{(1)} \right), \dots , \left( x_{test}^{(m_{test})}, y_{test}^{(m_{test})} \right)
+\end{align*}
+$$
+
+### Anomaly detection vs. supervised learning
+Anomaly detection | Supervised learning
+------------------|--------------------
+Very small number of positive examples ($\mathbf{y}=1$). (0-20 is common).<br> Large number of negative ($\mathbf{y}=0$) examples. | Large number of positive and negative examples.
+Many different **types** of anomalies. Hard for any algorithm to learn from positive examples what the anomalies look like; future anomalies may look nothing like any of the anomalous examples we've seen so far. | Enough positive examples for algorithm to get a sense of what positive examples are like, future positive examples likely to be similar to ones in training set.
+Financial Fraud Detection<br>Manufacturing - Finding new previously unseen defects in manufacturing (e.g. aircraft engines)<br>Monitoring machine in a data center | Email spam classification<br>Manufacturing - Finding known, previously seen defects.<br>Weather prediction (sunny/rainy/etc)<br>Disease Classification
+
+### Choosing what features to use
+* In Supervised Learning, if you don't have the features quite right, or if you have a few extra features that are not relevant to the problem, that often turns out to be okay.
+    * Because the algorithm has the supervised signal that is enough labels why for the algorithm to figure out what features ignore, or how to re scale feature and to take the best advantage of the features you do give it.
+* For anomaly detection which runs, or learns just from unlabeled data, is harder for the anomaly to figure out what features to ignore.
+* Carefully choosing the features, is even more important for anomaly detection, than for supervised learning approaches.
+#### Non-gaussian features
+* Try to make sure the features you give to the anomay detection are more or less Gaussian.
+    * If your features are not Gaussian, sometimes you can change it to make it a little bit more Gaussian.
+##### Example
+* If you have a feature $x_{1}$, we often plot its histogram `plt.hist(x_1)`
+![Gaussian Feature](./images/gaussuan-features-01.jpg)
+* It can happen that the histogram of another feature $x_{2}$ is non-gaussian.
+![Non-Gaussian Feature](./images/gaussuan-features-02.jpg)
+    * In that case, we can try to transform $x_{2}$ in order to make it gaussian. Examples:
+        * $x \rightarrow \log(x)$
+        * $x \rightarrow \log(x + c)$
+        * $x \rightarrow \sqrt{x} \rightarrow x^{^1/_2}$
+        * $x \rightarrow \sqrt[3]{x} \rightarrow x^{^1/_3}$
+    > **Important**: Whatever transformation you apply to the training set, please remember to apply the same transformation to your cross validation and test set data as well.
+* [Code example of transformation](./code/gaussian-transformation.ipynb)
+#### Error analysis for anomaly detection
+* You can also carry out an error analysis process for anomaly detection, to understand why your anomaly detection doesn't work:
+    * What we want is:
+        * $p(x) \geq \epsilon$ large for normal examples $x$.
+        * $p(x) \leq \epsilon$ small for anomalous examples $x$.
+    * Most common problem:
+        * $p(x)$ is comparable for normal and anomalous examples. ($p(x)$ is large for both)
+        * In that case, what I would normally do is, try to look at that example and try to figure out what is it that made me think is an anomaly. This can lead us to find that adding another feature can distinguish anomalous behavior from normal behavior.
+
+[Practice Assignment: Anomaly Detection](./assignment-anomaly-detection/C3_W1_Anomaly_Detection.ipynb)
 
 [<<Previous](../README.md) | [Next>>]()
