@@ -12,7 +12,7 @@
 * To develop our recommendations system, we will add features to the items.
     * In case of movies, we can add features related to the genre of each movie.
     * We will donate $n$ as the number of features that each items has.
-* If the item has $n=2$ features then we can donate the features of the first item as $\mathbf{x}^{(1)} = \begin{bmatrix}0.9 \\ 0\end{bmatrix}$
+* If the item has $n=2$ features then we can donate the features of the first item as $\mathbf{x}^{(1)} = \begin{bmatrix}0.9 \newline 0\end{bmatrix}$
 * So for user 1, to predict the rating for movie $i$, we use a formula similar to _linear regression_ as: $\mathbf{w}^{(1)} \cdot \mathbf{x}^{(i)} + b^{(1)}$
 * And to generalize, for user $j$ the formula would be: $\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)}$.
 * The difference with _Linear Regression_ is in Recommendation system, we fit a Linear Regression model for each user in the dataset.
@@ -33,7 +33,7 @@ $$
 * To learn parameters $\mathbf{w}^{(1)}, b^{(1)}, \dots , \mathbf{w}^{(n_{u})}, b^{(n_{u})}$ for all users:
 
 $$
-J \begin{pmatrix} \mathbf{w}^{(1)}, & \dots, & \mathbf{w}^{(n_{u})} \\ b^{(1)}, & \dots, & b^{(n_{u})} \end{pmatrix} = \frac{1}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{i:r(i,j)=1}{ \left( \mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(i)} - \mathbf{y}^{(i,j)} \right)^{2} } + \frac{\lambda}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{k=1}^{n}{ \left( \mathbf{w}_{k}^{(j)} \right)^{2} }
+J \begin{pmatrix} \mathbf{w}^{(1)}, & \dots, & \mathbf{w}^{(n_{u})} \newline b^{(1)}, & \dots, & b^{(n_{u})} \end{pmatrix} = \frac{1}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{i:r(i,j)=1}{ \left( \mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(i)} - \mathbf{y}^{(i,j)} \right)^{2} } + \frac{\lambda}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{k=1}^{n}{ \left( \mathbf{w}_{k}^{(j)} \right)^{2} }
 $$
 
 [<<Previous](../week-01/README.md) | [Next>>]()
