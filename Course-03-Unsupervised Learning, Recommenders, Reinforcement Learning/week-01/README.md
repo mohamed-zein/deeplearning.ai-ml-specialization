@@ -16,7 +16,7 @@
 * K-means is a clustering algorithm.
 * Initially K-means starts by taking a random guess at where might be the centers of the two clusters that you might ask it to find.
     > **Centriods**: the centers of the cluster are called cluster _Centroids_.
-* After it has made an initial guess at where at where the cluster centroid is, it will go through all of data points.
+* After it has made an initial guess at where the cluster centroid is, it will go through all of data points.
     * And for each of them it will check which centroid is closer to this data point.
     * And it will assign each of these points to whichever of the cluster centroids It is closer to.
     * It will move each centroid to whatever is the average location of the data points associated with it.
@@ -36,7 +36,7 @@
 > **Notations**  
 > * $c^{(i)} = \text{index of cluster } (1, 2, \dots , K) \text{ to which example } x^{(i)} \text{ is currently assigned}$
 > * $\mu_{k} = \text{Cluster centroid } k$
-> * $\mu_{c^{(i)}} = \text{Cluster of cluster to which example } x^{(i)} \text{has been assigned}$
+> * $\mu_{c^{(i)}} = \text{Cluster centroid of cluster to which example } x^{(i)} \text{has been assigned}$
 
 #### Cost Function
 $$
@@ -95,7 +95,7 @@ $$
 * _Monitoring_ computers in a data center:
 ### Gaussian (normal) distribution
 Say $x$ is a number.  
-Probability of $x$ is determined by a Gaussian with mean $\mu$, variance $\sigma^{2}$
+Probability of $x$ is determined by a Gaussian with mean $\mu$, variance $\sigma^{2}$  
 ![Gaussian distribution](./images/gaussian-distribution-01.jpg)
 
 $$
