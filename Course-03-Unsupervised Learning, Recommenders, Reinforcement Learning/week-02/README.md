@@ -12,7 +12,7 @@
 * To develop our recommendations system, we will add features to the items.
     * In case of movies, we can add features related to the genre of each movie.
     * We will donate $n$ as the number of features that each items has.
-* If the item has $n=2$ features then we can donate the features of the first item as $\mathbf{x}^{(1)} = \begin{bmatrix}0.9 \newline 0\end{bmatrix}$
+* If the item has $n=2$ features then we can donate the features of the first item as $\mathbf{x}^{(1)} = \begin{bmatrix} 0.9 \newline 0 \end{bmatrix}$
 * So for user 1, to predict the rating for movie $i$, we use a formula similar to _linear regression_ as: $\mathbf{w}^{(1)} \cdot \mathbf{x}^{(i)} + b^{(1)}$
 * And to generalize, for user $j$ the formula would be: $\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)}$.
 * The difference with _Linear Regression_ is in Recommendation system, we fit a Linear Regression model for each user in the dataset.
