@@ -92,4 +92,7 @@ $$
 J(\mathbf{w}, b, \mathbf{x}) = \sum\limits_{(i,j):r(i,j) = 1}{L \left(\underbrace{f_{(\mathbf{w}, b, \mathbf{x})} (\mathbf{x})}_{g(\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)})}, \mathbf{y}^{(i,j)} \right)}
 $$
 
+## Recommender systems implementation detail
+
+
 [<<Previous](../week-01/README.md) | [Next>>]()
