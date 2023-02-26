@@ -33,7 +33,36 @@ $$
 * To learn parameters $\mathbf{w}^{(1)}, b^{(1)}, \dots , \mathbf{w}^{(n_{u})}, b^{(n_{u})}$ for all users:
 
 $$
-J \begin{pmatrix} \mathbf{w}^{(1)}, & \dots, & \mathbf{w}^{(n_{u})} \newline b^{(1)}, & \dots, & b^{(n_{u})} \end{pmatrix} = \frac{1}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{i:r(i,j)=1}{ \left( \mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(i)} - \mathbf{y}^{(i,j)} \right)^{2} } + \frac{\lambda}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{k=1}^{n}{ \left( \mathbf{w}_{k}^{(j)} \right)^{2} }
+\min_{\mathbf{w}^{(1)}, b^{(1)}, \dots , \mathbf{w}^{(n_{u})}, b^{(n_{u})}} J \begin{pmatrix} \mathbf{w}^{(1)}, & \dots, & \mathbf{w}^{(n_{u})} \newline b^{(1)}, & \dots, & b^{(n_{u})} \end{pmatrix} = \frac{1}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{i:r(i,j)=1}{ \left( \mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(i)} - \mathbf{y}^{(i,j)} \right)^{2} } + \frac{\lambda}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{k=1}^{n}{ \left( \mathbf{w}_{k}^{(j)} \right)^{2} }
 $$
+### Collaborative filtering algorithm
+* What if we don't have features, $x_1$ and $x_2$ of the product items?
+![Problem Motivation](./images/recomendation-01.jpg)
+* In collaborative filtering, because we have ratings from multiple users of the same item with the same movie, it is possible guess features $x_1$ and $x_2$ from scratch.
+#### Cost Function for estimating $\mathbf{x}^{(i)}$
+* Given $\mathbf{w}^{(1)}, b^{(1)}, \mathbf{w}^{(2)}, b^{(2)}, \dots , \mathbf{w}^{(n_{u})}, b^{(n_{u})}$, to learn $\mathbf{x}^{(i)}$:
+
+$$
+J\left(\mathbf{x}^{(i)}\right) = \frac{1}{2} \sum\limits_{j:r(i,j) = 1}{ \left(\underbrace{\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)}}_{\text{Predicted}} - \underbrace{\mathbf{y}^{(i,j)}}_{\text{Actual}} \right)^{2} } + \underbrace{\frac{\lambda}{2} \sum\limits_{k=1}^{n}{ \left( \mathbf{x}_{k}^{(i)} \right)^{2}} }_{\text{Regularization Term}}
+$$
+
+* So therefore all the users $j$ that have rated movie $i$, we will try to minimize the squared difference between what your choice of features $\mathbf{x}^{(i)}$ results in terms of the predicted movie rating minus the actual movie rating that the user had given it.
+    * Finally, if we want to add a regularization term, we add the usual $+ \frac{\lambda}{2}$, $k= 1$ through $n$, where $n$ as usual is the number of features of $\mathbf{x}^{(i)}$ squared.
+
+* To learn all the features in our data set $\mathbf{x}^{(1)}, \mathbf{x}^{(2)}. \dots , \mathbf{x}^{(n_{m})}$:
+
+$$
+\min_{\mathbf{x}^{(1)},\dots , \mathbf{x}^{(n_m)}} J\left(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \dots , \mathbf{x}^{(n_m)}\right) = \frac{1}{2} \sum\limits_{i=1}^{n_{m}} \sum\limits_{j:r(i,j) = 1}{ \left(\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)} - \mathbf{y}^{(i,j)} \right)^{2} } + \frac{\lambda}{2} \sum\limits_{i=1}^{n_{m}} \sum\limits_{k=1}^{n}{ \left( \mathbf{x}_{k}^{(i)} \right)^{2}}
+$$
+
+
+#### Final Cost function
+* We assumed we had those parameters $\mathbf{w}$ and $\mathbf{b}$ for the different users. Where do you get those parameters from? We can put together the [cost function for parameters](#cost-function) with the [cost function for features](#cost-function-for-estimating).
+
+$$
+\min_{\mathbf{w}^{(1)}, \dots , \mathbf{w}^{(n_{u})}, b^{(1)}, \dots , b^{n_{u}} \mathbf{x}^{(1)},\dots , \mathbf{x}^{(n_m)}} J(\mathbf{w}, b,  \mathbf{x}) = \frac{1}{2} \sum\limits_{(i,j):r(i,j) = 1}{ \left(\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)} - \mathbf{y}^{(i,j)} \right)^{2} } + \frac{\lambda}{2} \sum\limits_{i=1}^{n_{m}} \sum\limits_{k=1}^{n}{ \left( \mathbf{x}_{k}^{(i)} \right)^{2}} + \frac{\lambda}{2} \sum\limits_{j=1}^{n_{u}} \sum\limits_{k=1}^{n}{ \left( \mathbf{w}_{k}^{(j)} \right)^{2} }
+$$
+
+![Gradient Descent](./images/recomendation-02.jpg)
 
 [<<Previous](../week-01/README.md) | [Next>>]()
