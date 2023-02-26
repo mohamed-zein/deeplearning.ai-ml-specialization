@@ -93,6 +93,51 @@ J(\mathbf{w}, b, \mathbf{x}) = \sum\limits_{(i,j):r(i,j) = 1}{L \left(\underbrac
 $$
 
 ## Recommender systems implementation detail
+### Mean normalization
+* Assuming we have 4 users and one of them has not rated any movie yet so:
 
+$$
+\mathbf{y}^{(i,j)} = \begin{bmatrix}
+5 & 5 & 0 & 0 & ? \newline
+5 & ? & ? & 0 & ? \newline
+? & 4 & 0 & ? & ? \newline
+0 & 0 & 5 & 4 & ? \newline
+0 & 0 & 5 & 0 & ?
+\end{bmatrix}
+$$
+
+To carry out mean normalization:
+1. we will calculate the average for each row (i.e. movie) as $\frac{\text{Sum of provided values}}{\text{count of provided values}}$ so for our example, we end up with vector:
+
+$$
+\mu = \begin{bmatrix}
+2.5 \newline
+2.5 \newline
+2 \newline
+2.25 \newline
+1.25 \newline
+\end{bmatrix}
+$$
+
+2. Then we subtract $ \mathbf{y}^{(i,j)} - \mu$ to get the normalized $\mathbf{y}^{(i,j)}$
+
+$$
+\mathbf{y}^{(i,j)}_{\text{normalized}} = \mathbf{y}^{(i,j)} - \mu = 
+\begin{bmatrix}
+2.5 & 2.5 & -2.5 & -2.5 & ? \newline
+2.5 & ? & ? & -2.5 & ? \newline
+? & 2 & -2 & ? & ? \newline
+-2.25 & -2.25 & 2.75 & 1.75 & ? \newline
+-1.25 & -1.25 & 3.75 & -1.25 & ?
+\end{bmatrix}
+$$
+
+3. For user $j$, on movie $i$ predict:
+
+$$
+\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)} + \mu_{i}
+$$
+
+* This will lead to users with no ratings to have the average rating for each movie.
 
 [<<Previous](../week-01/README.md) | [Next>>]()
