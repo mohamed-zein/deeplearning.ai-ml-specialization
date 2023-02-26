@@ -153,6 +153,19 @@ $$
     ```python
     [dJdw] = tape.gradient(costJ, [w])
     ```
+### Finding related items
+* To find other items related to item $i$, find item $k$ with $x^{(k)}$ similar to $x^{(i)}$ with the smallest distance:
 
+$$
+\sum\limits_{i=1}^{n}{\left\| x_{(k)} - x_{(i)} \right\|}^{2}
+$$
+
+### Limitation of Collaborative Filtering
+* Cold Start problem:
+    * Rank new items that few users have rated?
+    * Show something reasonable to new users who have rated few items?
+* It does not give a natural way to use side information about items or users:
+    * Item: Genre, movie stars, studio, ... .
+    * User: Demographics (age, gender, location), expressed preferences, ... .
 
 [<<Previous](../week-01/README.md) | [Next>>]()
