@@ -168,4 +168,6 @@ $$
     * Item: Genre, movie stars, studio, ... .
     * User: Demographics (age, gender, location), expressed preferences, ... .
 
+[Assignment: Collaborative Filtering Recommender Systems](./assignment-01/C3_W2_Collaborative_RecSys_Assignment.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
