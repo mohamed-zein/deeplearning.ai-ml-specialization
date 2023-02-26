@@ -170,4 +170,6 @@ $$
 
 [Assignment: Collaborative Filtering Recommender Systems](./assignment-01/C3_W2_Collaborative_RecSys_Assignment.ipynb)
 
+## Content-based filtering
+
 [<<Previous](../week-01/README.md) | [Next>>]()
