@@ -139,5 +139,20 @@ $$
 $$
 
 * This will lead to users with no ratings to have the average rating for each movie.
+### TensorFlow implementation of collaborative filtering
+* TensorFlow can automatically figure out for us what are the derivatives of the cost function.
+* Recall that our cost function has a derivative component:
+
+$$
+\mathbf{w} = \mathbf{w} - \alpha \frac{\partial}{\partial \mathbf{w}} J(\mathbf{w}, b)
+$$
+
+* We can use TensorFlow's `tf.Variable()` to represent the variable we want to optimize.
+* Also, we can use TensorFlow's `tf.GradientTape()` to record the steps used to compute the cost $J$, to enable auto differentiation.
+* We can use `tape.gradient()` to calculate the gradients of the cost with respect to parameter $\mathbf{w}$
+    ```python
+    [dJdw] = tape.gradient(costJ, [w])
+    ```
+
 
 [<<Previous](../week-01/README.md) | [Next>>]()
