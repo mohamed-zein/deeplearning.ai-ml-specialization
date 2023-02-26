@@ -64,5 +64,32 @@ $$
 $$
 
 ![Gradient Descent](./images/recomendation-02.jpg)
+### Binary labels: favs, likes and clicks
+* Many applications of recommendation systems or collective filtering algorithms involvs binary labels.
+* Binary labels is instead of a user giving you a one to five star or zero to five star rating, they just somehow give you a sense of they like this item or they did not like this item.
+* The process we'll use to generalize the algorithm will be very much reminiscent to how we have gone from linear regression to logistic regression.
+#### Example Applications
+1. Did user $j$ purchase an item after being shown?
+2. Did user $j$ fav/like an item?
+3. Did user $j$ spend at least 30sec with an item?
+4. Did user $j$ click on an item?
+
+Meaning of rating:
+* 1 - engaged after being shown an item.
+* 0 - did not engage after being shown item.
+* ? - item not yet shown.
+
+#### Cost function for binary classification
+* Loss for binary labels $\mathbf{y}^{(i,j)} = f_{(\mathbf{w}, b, \mathbf{x})} (\mathbf{x}) = g(\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)})$
+
+$$
+L \left(f_{(\mathbf{w}, b, \mathbf{x})} (\mathbf{x}), \mathbf{y}^{(i,j)} \right) = -\mathbf{y}^{(i,j)} \log{\left( f_{(\mathbf{w}, b, \mathbf{x})} (\mathbf{x}) \right)} - \left(1 - \mathbf{y}^{(i,j)} \right)\log{\left(1- f_{(\mathbf{w}, b, \mathbf{x})} (\mathbf{x}) \right)}
+$$
+
+* So the cost function would be:
+
+$$
+J(\mathbf{w}, b, \mathbf{x}) = \sum\limits_{(i,j):r(i,j) = 1}{L \left(\underbrace{f_{(\mathbf{w}, b, \mathbf{x})} (\mathbf{x})}_{g(\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)})}, \mathbf{y}^{(i,j)} \right)}
+$$
 
 [<<Previous](../week-01/README.md) | [Next>>]()
