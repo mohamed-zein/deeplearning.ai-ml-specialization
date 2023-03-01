@@ -229,5 +229,20 @@ $$
 
 > **Note**  
 > This can be pre-computed ahead of time. So when the user browse for a movie, the web site can show him the similar movies.
+### Recommending from a large catalogue
+* Today's applications (i.e. large online shopping sites, Streaming services, .. ,etc) can have millions or even 10s of millions of products to choose from when a user shows up on your website, they have some feature $\mathbf{x}_u$.
+* Running neural network inference thousands of millions of times every time a user shows up on your website becomes computationaly infeasible.
+#### Two steps: Retrieval & Ranking
+* **Retrieval**: Generate large listv of plausible item candidates.
+    * Examples:
+        1. For each of the last 10 movies watched by the user, find 10 most similar movies.
+        2. For most viewed 3 genres, find the top 10 movies.
+        3. Top 20 movies in the country.
+    * Combine retrieved items into a list, removing duplicates and items already purchased/watched.
+* **Ranking**: Take list retrieved and rank using learned model.
+    * One possible optimization is if you already calculated $\mathbf{v}_{m}$ in advance, then it is possible to do inference on only $\mathbf{x}_{u}$ to compute $\mathbf{v}_{u}$ and then calculate the dot product $\mathbf{v}_{m} \cdot \mathbf{v}_{u}$ to calculate the prediction.
+* One of the decision is how many items to retrieve during the retrieval step.
+    * Retrieving more items results in better performance, but slowe recommendation.
+    * To analyse/optimize the trade-off, carry out offline experiments to see if retrieving additional items result in more relevant recommendation (i.e. $p(\mathbf{y}^{(i,j)})=1$ of items displayed to user are higher) 
 
 [<<Previous](../week-01/README.md) | [Next>>]()
