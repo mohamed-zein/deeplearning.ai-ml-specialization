@@ -171,5 +171,63 @@ $$
 [Assignment: Collaborative Filtering Recommender Systems](./assignment-01/C3_W2_Collaborative_RecSys_Assignment.ipynb)
 
 ## Content-based filtering
+### Collaborative filtering vs Content-based filtering
+* **Collaborative Filtering**: Recommend items to you based on ratings of users who gave similar ratings as you.
+* **Content-based filtering**: Recommend items to you based on **features of user** and **features of item** to find good match.
+#### Examples of user and item features
+* User features
+    * Age
+    * Gender
+    * Country
+    * Movies Watched
+    * Average rating per genre
+* Notation: From the user features, we will build a feature vector
+
+$$
+\mathbf{x}_{u}^{(j)} \text{ for user } j
+$$
+* Movie features
+    * Year
+    * Genre/Genres
+    * Reviews
+    * Average rating
+* Notation: From the movie features, we will build a feature vector
+
+$$
+\mathbf{x}_{m}^{(i)} \text{ for movie } i
+$$
+* In content based filtering, the task is to try to figure out whether a given movie $i$ is going to be good match for user $j$.
+
+    > **Note**:  
+    > The user features $\mathbf{x}_{u}^{(j)}$ and movie features $\mathbf{x}_{m}^{(i)}$ can be very different in size.
+#### Learn to match
+* Previously, we used $\mathbf{w}^{(j)} \cdot \mathbf{x}^{(i)} + b^{(j)}$ to predict rating of user $j$ on movie $i$.
+* In content based filtering:
+    * We will use $\mathbf{x}_{u}^{(j)}$ a vector $\mathbf{v}_{u}^{(j)}$.
+    * We will use $\mathbf{x}_{m}^{(i)}$ a vector $\mathbf{v}_{m}^{(i)}$
+    * The dot product $\mathbf{v}_{u}^{(j)} \cdot \mathbf{v}_{m}^{(i)}$ can give us a prediction of the rating that user $j$ gives movie $i$.
+* In order to perform the doct product $\mathbf{v}_{u}^{(j)} \cdot \mathbf{v}_{m}^{(i)}$, both vectors have to be of the same size.
+### Deep learning for content-based filtering
+* Given a feature vector describing a user, such as age and gender, and country, and so on, we have to compute the vector $\mathbf{v}_u$.
+* Given a vector describing a movie such as year of release, the stars in the movie, and so on, we have to compute a vector $\mathbf{v}_m$.
+![Neural Network Architecture](./images/recomendation-03.jpg)
+* To compute both, we build 2 neural networks **User Network** and **Movie Network**.
+    * The output layer of both networks must have same number of neurons so the out vectors $\mathbf{v}_u$ and $\mathbf{v}_m$ will have the same size.
+#### Content-based filtering Cost function
+![Neural Network Architecture](./images/recomendation-04.jpg)
+
+$$
+J = \sum\limits_{(i,j):r(i,j)=1}{ \left( \mathbf{v}_{u}^{(j)} \cdot \mathbf{v}_{m}^{(i)} - \mathbf{y}^{(i,j)} \right)^{2} } + \text{NN regularization term}
+$$
+
+### Similar Items
+We can use the calculated $\mathbf{v}_{m}$ to find similar movies to movie $i$ using:
+
+$$
+\left\|\mathbf{v}_{m}^{(k)} - \mathbf{v}_{m}^{(i)} \right\|^{2} \leq \text{Defined Threshold}
+$$
+
+> **Note**  
+> This can be pre-computed ahead of time. So when the user browse for a movie, the web site can show him the similar movies.
 
 [<<Previous](../week-01/README.md) | [Next>>]()
