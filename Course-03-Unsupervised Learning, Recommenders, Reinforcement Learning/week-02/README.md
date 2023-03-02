@@ -243,6 +243,8 @@ $$
     * One possible optimization is if you already calculated $\mathbf{v}_{m}$ in advance, then it is possible to do inference on only $\mathbf{x}_{u}$ to compute $\mathbf{v}_{u}$ and then calculate the dot product $\mathbf{v}_{m} \cdot \mathbf{v}_{u}$ to calculate the prediction.
 * One of the decision is how many items to retrieve during the retrieval step.
     * Retrieving more items results in better performance, but slowe recommendation.
-    * To analyse/optimize the trade-off, carry out offline experiments to see if retrieving additional items result in more relevant recommendation (i.e. $p(\mathbf{y}^{(i,j)})=1$ of items displayed to user are higher) 
+    * To analyse/optimize the trade-off, carry out offline experiments to see if retrieving additional items result in more relevant recommendation (i.e. $p(\mathbf{y}^{(i,j)})=1$ of items displayed to user are higher).
+
+[Assignment: Deep Learning for Content-Based Filtering](./assignment-02/C3_W2_RecSysNN_Assignment.ipynb)
 
 [<<Previous](../week-01/README.md) | [Next>>]()
