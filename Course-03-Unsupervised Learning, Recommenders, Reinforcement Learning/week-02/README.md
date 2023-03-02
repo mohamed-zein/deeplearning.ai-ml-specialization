@@ -247,4 +247,6 @@ $$
 
 [Assignment: Deep Learning for Content-Based Filtering](./assignment-02/C3_W2_RecSysNN_Assignment.ipynb)
 
+## Principal Component Analysis
+
 [<<Previous](../week-01/README.md) | [Next>>]()
