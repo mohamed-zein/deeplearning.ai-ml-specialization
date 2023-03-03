@@ -293,4 +293,4 @@ $$
 
 [Lab: PCA and data visualization](./code/C3_W2_Lab01_PCA_Visualization_Examples.ipynb)
 
-[<<Previous](../week-01/README.md) | [Next>>]()
+[<<Previous](../week-01/README.md) | [Next>>](../week-03/README.md)
