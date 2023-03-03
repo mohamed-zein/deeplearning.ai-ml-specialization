@@ -94,5 +94,30 @@ Find a policy $\pi$ that tells you what action $(a=\pi(s))$ to take in every sta
 * The best possible action in state $s$ is the action $a$ that gives $\max\limits_{a} Q(s,a)$.
 ### State-action value function example
 [Lab: State-action value function](./code/State-action%20value%20function%20example.ipynb)
+### Bellman Equations
+* In reinforcement learning, there's a key equation called the **Bellman equation** that will help us to compute the state action value function.
+* Notation:
+
+$$
+\begin{align*}
+s & \text{ : current state} \qquad R(s) = \text{reward of current state} \newline
+a & \text{ : current action} \newline
+s' & \text{ : state you get to after taking action } a \newline
+a' & \text{ : action that you take in state } s'
+\end{align*}
+$$
+
+* Bellman equation
+
+$$
+\begin{align*}
+Q(s, a) & = \underbrace{R(s)}_{\text{Reward you get right away}} + \underbrace{\gamma \max\limits_{a'}{Q(s',a')}}_{\text{Return from behaving optimally starting from state } s'} \newline
+& = R_{1} + \gamma R_{2} + \gamma^{2} R_{3} + \gamma^{3} R_{4} + \dots \newline
+& = R_{1} + \gamma \left[R_{2} + \gamma R_{3} + \gamma^{2} R_{4} + \dots \right]
+\end{align*}
+$$
+
+> **Note**  
+> At terminal state $Q(s, a) = R(s)$
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
