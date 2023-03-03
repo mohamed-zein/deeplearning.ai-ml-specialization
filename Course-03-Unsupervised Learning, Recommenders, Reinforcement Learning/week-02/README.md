@@ -285,4 +285,10 @@ $$
 \begin{bmatrix} x_{1} \newline x_{2} \end{bmatrix} \approx Z \times \begin{bmatrix} 0.71 \newline 0.71 \end{bmatrix}
 $$
 
+### PCA in code (scikit-learn)
+* Optional preprocessing: Perform feature scaling.
+1. **fit** the data to obtain 2 (or 3) new axes (principal component). `fit`
+2. Optionally examine how much variance is explained by each principal component. `explained_variance_ratio`
+3. Transform (project) the data onto the new axes. `transform`
+
 [<<Previous](../week-01/README.md) | [Next>>]()
