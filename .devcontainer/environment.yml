@@ -1,5 +1,6 @@
 name: base
 channels:
+  - plotly
   - defaults
   - conda-forge
 dependencies:
@@ -8,3 +9,4 @@ dependencies:
   - pydot
   - py-xgboost
   - tabulate
+  - plotly
