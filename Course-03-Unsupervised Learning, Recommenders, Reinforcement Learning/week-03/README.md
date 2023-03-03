@@ -82,5 +82,6 @@ Find a policy $\pi$ that tells you what action $(a=\pi(s))$ to take in every sta
 * This formalism of a reinforcement learning application has a name. It's called a **Markov decision process**.
 * The term _Markov_ in the MDP or Markov decision process refers to that the future only depends on the current state and not on anything that might have occurred prior to getting to the current state.
     * In other words, in a Markov decision process, the future depends only on where you are now, not on how you got here.
+## State-action value function
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
