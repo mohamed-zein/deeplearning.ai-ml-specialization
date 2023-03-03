@@ -62,5 +62,19 @@ $$
 > **Note**:  
 > In financial applications, the discount factor also has a very natural interpretation as the **interest rate** or the **time value of money**.
 
+### Making decisions: Policies in reinforcement learning
+* There are different ways that you can take actions in the reinforcement learning problem:
+    * We could decide to always go for the nearer reward.
+    * We could choose actions is to always go for the larger reward.
+    * We could always go for smaller reward.
+    * We could choose to go left unless you're just one step away from the lesser reward.
+* In reinforcement learning, our goal is to come up with a function which is called a **Policy** $\pi$, whose job it is to take as input any state $s$ and map it to some action $a$ that it wants us to take.
+
+$$
+\text{state} \quad s \quad \xrightarrow[\pi]{\text{policy}} \quad \text{action} \quad a
+$$
+
+> **The goal of reinforcement learning**  
+Find a policy $\pi$ that tells you what action $(a=\pi(s))$ to take in every state $(s)$ so as to maximize the retun.
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
