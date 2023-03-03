@@ -251,5 +251,38 @@ $$
 ### Reducing the number of features
 * _Principal Component Analysis_ is an algorithm that is commonly used for visualization.
 * PCA, or principal components analysis is an algorithm that lets you take data with a lot of features, 50, 1,000, even more, and reduce the number of features to two features, maybe three features, so that you can plot it and visualize it.
+### PCA algorithm
+* If you have a dataset with two features, $x_1$ and $x_2$. You want to replace these two features with just one feature. You choose a new axis, let's call it the z-axis.
+![PCA Algorithm](./images/PCA-01.jpg)
+* Here's the data sets with five training examples. Remember, PCA is an unsupervised learning algorithm so we just have $x_1$ and $x_2$, there is no label $y$.
+* Before applying the next few steps of PCA the features should be first normalized to have zero mean.
+![PCA Choose an axis](./images/PCA-02.jpg)
+* What we have to do now with PCA is, pick one axis instead of the two axes that we had previously with which to capture what's important about these five examples.
+* We're going to take each of these examples and project it down to a point on the z-axis.
+    * The word project refers to that you're taking this example and bringing it to the z-axis using this line segment that's at a 90-degree angle to the z-axis.
+> The **Principal Component** is the z-axis that when you project the data onto it, you end up with the largest possible amounts of variance.
+![Coordinate on the new axis](./images/PCA-03.jpg)
+* The coordinate on the new axis will be the result of dot product of original coordinates and the vector of length 1
+
+$$
+Z = \begin{bmatrix} x_{1} \newline x_{2} \end{bmatrix} \cdot \begin{bmatrix} 0.71 \newline 0.71 \end{bmatrix}
+$$
+
+![More principal components](./images/PCA-04.jpg)
+
+#### PCA is not linear regression
+![PCA is not linear regression](./images/PCA-05.jpg)
+* With _linear regression_ you're trying to fit a straight line so that the predicted value is as close as possible to the ground truth label $\mathbf{y}$.
+    * In other words, you're trying to minimize the length of these little line segments which are in the vertical direction.
+* In _PCA_, there is no ground truth label $\mathbf{y}$. You just have unlabeled data, $x_1$ and $x_2$, and furthermore, you're not trying to fit a line to use $x_1$ to predict $x_2$. Instead,  we're trying to find this axis $Z$.
+#### Approximation to the original data
+![Approximation to the original data](./images/PCA-06.jpg)
+* There's a step in PCA called **reconstruction**, which is to try to go from this one number $Z$ back to the original two numbers, $x_1$ and $x_2$.
+* It turns out you don't have enough information to get back $x_1$ and $x_2$ exactly, but you can try to approximate it.
+* The formula is, you would take $Z$, and multiply it by the length one vector that we had just now, which is 0.71, 0.71.
+
+$$
+\begin{bmatrix} x_{1} \newline x_{2} \end{bmatrix} \approx Z \times \begin{bmatrix} 0.71 \newline 0.71 \end{bmatrix}
+$$
 
 [<<Previous](../week-01/README.md) | [Next>>]()
