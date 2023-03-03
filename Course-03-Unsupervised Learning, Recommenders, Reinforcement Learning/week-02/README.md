@@ -248,5 +248,8 @@ $$
 [Assignment: Deep Learning for Content-Based Filtering](./assignment-02/C3_W2_RecSysNN_Assignment.ipynb)
 
 ## Principal Component Analysis
+### Reducing the number of features
+* _Principal Component Analysis_ is an algorithm that is commonly used for visualization.
+* PCA, or principal components analysis is an algorithm that lets you take data with a lot of features, 50, 1,000, even more, and reduce the number of features to two features, maybe three features, so that you can plot it and visualize it.
 
 [<<Previous](../week-01/README.md) | [Next>>]()
