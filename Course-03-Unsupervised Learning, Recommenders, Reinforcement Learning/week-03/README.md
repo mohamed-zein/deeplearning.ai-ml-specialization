@@ -37,8 +37,10 @@ $$
 * At every step, the robot is in some _state_ $s$, and it gets to choose an action $a$, and it also enjoys some rewards $R(s)$ that it gets from that state. As a result of this action, it to some new state $s'$.
 
 $$
+\begin{align*}
 (s, a, R(s), s') \newline
 (4, \leftarrow, 0, 3)
+\end{align*}
 $$
 
 > **Note**:  
