@@ -291,4 +291,6 @@ $$
 2. Optionally examine how much variance is explained by each principal component. `explained_variance_ratio`
 3. Transform (project) the data onto the new axes. `transform`
 
+[Lab: PCA and data visualization](./code/C3_W2_Lab01_PCA_Visualization_Examples.ipynb)
+
 [<<Previous](../week-01/README.md) | [Next>>]()
