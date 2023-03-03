@@ -83,5 +83,14 @@ Find a policy $\pi$ that tells you what action $(a=\pi(s))$ to take in every sta
 * The term _Markov_ in the MDP or Markov decision process refers to that the future only depends on the current state and not on anything that might have occurred prior to getting to the current state.
     * In other words, in a Markov decision process, the future depends only on where you are now, not on how you got here.
 ## State-action value function
+### State-action value function definition
+* The state action value function is a function typically denoted by $Q(s,a)$ will give a number = the _Return_ if you:
+    * start in state $s$.
+    * take action $a$ (once).
+    * Then behave optimally (take actions that will result in the highest possible return) after that.
+![State-action value function](./images/state-action-value-01.jpg)
+
+* The best possible return from state $s$ is $\max\limits_{a} Q(s,a)$.
+* The best possible action in state $s$ is the action $a$ that gives $\max\limits_{a} Q(s,a)$.
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
