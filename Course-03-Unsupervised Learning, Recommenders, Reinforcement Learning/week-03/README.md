@@ -92,5 +92,7 @@ Find a policy $\pi$ that tells you what action $(a=\pi(s))$ to take in every sta
 
 * The best possible return from state $s$ is $\max\limits_{a} Q(s,a)$.
 * The best possible action in state $s$ is the action $a$ that gives $\max\limits_{a} Q(s,a)$.
+### State-action value function example
+[Lab: State-action value function](./code/State-action%20value%20function%20example.ipynb)
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
