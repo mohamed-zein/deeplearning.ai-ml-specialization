@@ -46,4 +46,21 @@ $$
 > **Note**:  
 > The reward $R$ is associated with state $s$ not $s'$
 
+### The Return in reinforcement learning
+* How do you know if a particular set of rewards is better or worse than a different set of rewards?
+* The concept of a **Return** captures that rewards you can get quicker are maybe more attractive than rewards that take you a long time to get to.
+![Return in reinforcement learning](./images/reinforcement-learning-02.jpg)
+* The **Return** is defined as the sum of rewards until the _terminal state_ but weighted by one additional factor, which is called the **discount factor** $\gamma$.
+
+$$
+\text{Return} = R_{1} + \gamma R_{2} + \gamma^{2} R_{3} + \dots \text{until terminal state}
+$$
+
+* What the **discount factor** $\gamma$ does is it has the effect of making the reinforcement learning algorithm a little bit impatient so getting rewards sooner results in a higher value for the total return.
+* In many reinforcement learning algorithms, a common choice for the discount factor will be a number pretty close to 1, like 0.9, or 0.99, or even 0.999.
+
+> **Note**:  
+> In financial applications, the discount factor also has a very natural interpretation as the **interest rate** or the **time value of money**.
+
+
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
