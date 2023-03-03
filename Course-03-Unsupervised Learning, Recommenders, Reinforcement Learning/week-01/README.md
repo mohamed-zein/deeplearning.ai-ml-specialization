@@ -187,4 +187,4 @@ Financial Fraud Detection<br>Manufacturing - Finding new previously unseen defec
 
 [Practice Assignment: Anomaly Detection](./assignment-anomaly-detection/C3_W1_Anomaly_Detection.ipynb)
 
-[<<Previous](../README.md) | [Next>>]()
+[<<Previous](../README.md) | [Next>>](../week-02/README.md)
