@@ -92,8 +92,7 @@ Find a policy $\pi$ that tells you what action $(a=\pi(s))$ to take in every sta
 
 * The best possible return from state $s$ is $\max\limits_{a} Q(s,a)$.
 * The best possible action in state $s$ is the action $a$ that gives $\max\limits_{a} Q(s,a)$.
-### State-action value function example
-[Lab: State-action value function](./code/State-action%20value%20function%20example.ipynb)
+
 ### Bellman Equations
 * In reinforcement learning, there's a key equation called the **Bellman equation** that will help us to compute the state action value function.
 * Notation:
@@ -119,5 +118,25 @@ $$
 
 > **Note**  
 > At terminal state $Q(s, a) = R(s)$
+
+### Random (stochastic) environment
+* In stochastic environment, when you take an action, the outcome is not always completely reliable.
+    * For example, if you command your Mars rover to go left maybe there's a little bit of a rock slide, or maybe the floor is really slippery and so it slips and goes in the wrong direction.
+* In a stochastic reinforcement learning problem, what we're interested in is not maximizing the return because that's a random number. What we're interested in is maximizing the average value of the sum of counted rewards.
+
+$$
+\begin{align*}
+\text{Expected Return } & = \text{Average}(R_{1} + \gamma R_{2} + \gamma^{2}R_{3} + \gamma^{3}R_{4} + \dots) \newline
+& = E \left[R_{1} + \gamma R_{2} + \gamma^{2}R_{3} + \gamma^{3}R_{4} + \dots \right]
+\end{align*}
+$$
+
+* The job of reinforcement learning algorithm is to choose a policy $\pi(s) = a$ that will tell us what action $a$ to take in state $s$ so as to maximize the expected return.
+
+$$
+Q(s, a) = R(s) + \gamma E\left[ \max\limits_{a'}{Q(s',a')}\right]
+$$
+
+[Lab: State-action value function](./code/State-action%20value%20function%20example.ipynb)
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
