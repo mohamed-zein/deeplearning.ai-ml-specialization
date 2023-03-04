@@ -140,5 +140,13 @@ $$
 [Lab: State-action value function](./code/State-action%20value%20function%20example.ipynb)
 
 ## Continuous state spaces
+### Example of continuous state space applications
+* In example of self driving truck, the state will include 6 numbers:
+
+$$
+s = \begin{bmatrix} x \newline y \newline \theta \newline \dot{x} \newline \dot{y} \newline \dot{\theta} \end{bmatrix}
+$$
+
+* The state of the problem of continuous state reinforcement learning problem or a continuous state Markov decision process isn't just one of a small number of possible discrete values, like a number from 1-6. Instead, it's a vector of numbers, any of which could take any of a large number of values.
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
