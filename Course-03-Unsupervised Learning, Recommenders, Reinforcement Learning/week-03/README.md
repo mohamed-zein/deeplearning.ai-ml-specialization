@@ -139,4 +139,6 @@ $$
 
 [Lab: State-action value function](./code/State-action%20value%20function%20example.ipynb)
 
+## Continuous state spaces
+
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
