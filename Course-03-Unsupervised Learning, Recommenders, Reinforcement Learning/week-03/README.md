@@ -164,5 +164,16 @@ $$
 ![Learning Algorithm](./images/deep-reinforcement-learning-02.jpg)
 ### Algorithm refinement: Improved neural network architecture
 ![Improved neural network architecture](./images/deep-reinforcement-learning-03.jpg)
+### Algorithm refinement: $\epsilon$-greedy policy
+* The learning algorithm that we developed, even while you're still learning how to approximate $Q(s,a)$, you need to take some actions in the lunar lander.
+* The most common way to do so is to use something called an $\epsilon$-greedy policy.
+* In some state $s$
+    * Option 1:
+        * Pick the action $a$ that maximizes $Q(s,a)$.
+    * Option 2:
+        * With probability 0.95, pick the action $a$ that maximizes $Q(s,a)$. $\rightarrow$ **Greedy**, **Exploitation**
+        * With probability 0.05, pick the action $a$ randomly. $\rightarrow$ **Exploration**.
+* This approach is called **$\epsilon$-greedy policy** ($\epsilon = 0.05$).
+* One of the trick that's sometimes used in reinforcement learning is to start off $\epsilon$ high and then gradually decrease it. ($1.0 \rightarrow 0.01$)
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
