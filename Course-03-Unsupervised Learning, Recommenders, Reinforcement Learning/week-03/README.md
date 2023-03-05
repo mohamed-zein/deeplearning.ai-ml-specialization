@@ -148,5 +148,21 @@ s = \begin{bmatrix} x \newline y \newline \theta \newline \dot{x} \newline \dot{
 $$
 
 * The state of the problem of continuous state reinforcement learning problem or a continuous state Markov decision process isn't just one of a small number of possible discrete values, like a number from 1-6. Instead, it's a vector of numbers, any of which could take any of a large number of values.
+### Deep Reinforcement Learning
+![Deep Reinforcement Learning](./images/deep-reinforcement-learning-01.jpg)
+* The heart of the learning algorithm is we're going to train a neural network that inputs the current state and the current action and computes or approximates $Q(s, a)$.
+* what we're going to do is not input a state and have it output an action. What we're going to do is input a state action pair and have it try to output $Q(s, a)$.
+* We use [Bellman's equations](#bellman-equations) to create a training set with lots of examples, $x$ and $y$, and then we'll use supervised learning exactly as you learned in the second course when we talked about neural networks.
+
+$$
+Q(\underbrace{s,a}_{\mathbf{x}}) = \underbrace{R(s) + \gamma \max\limits_{a'}{Q(s',a')}}_{\mathbf{y}}
+$$
+
+* By just trying out different things in the lunar lander simulator we'll observe a lot of examples of when we're in some state and we took some action, may be a good action, maybe a terrible action either way. 
+* Then we got some reward $R(s)$ for being in that state, and as a result of our action, we got to some new state, $s'$.
+#### Learning Algorithm
+![Learning Algorithm](./images/deep-reinforcement-learning-02.jpg)
+### Algorithm refinement: Improved neural network architecture
+![Improved neural network architecture](./images/deep-reinforcement-learning-03.jpg)
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
