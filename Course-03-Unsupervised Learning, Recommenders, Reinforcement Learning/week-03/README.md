@@ -176,4 +176,64 @@ $$
 * This approach is called **$\epsilon$-greedy policy** ($\epsilon = 0.05$).
 * One of the trick that's sometimes used in reinforcement learning is to start off $\epsilon$ high and then gradually decrease it. ($1.0 \rightarrow 0.01$)
 
+### Algorithm refinement: Mini-batch and soft updates
+* The first idea is called using _mini-batches_, and this turns out to be an idea they can both speed-up your reinforcement learning algorithm and it's also applicable to supervised learning.
+* The second idea we'll look at is _soft updates_, which it turns out will help your reinforcement learning algorithm do a better job to converge to a good solution.
+#### Mini-Batch
+* Remember the cost function of supervised learning algorithm
+
+$$
+J(w,b) = \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(f_{w,b}(\mathbf{x}^{(i)}) \right)}
+$$
+
+* Gradient descent algorithm:
+
+$$
+\begin{align*} 
+\text{repeat}& \lbrace \newline
+\;  w &= w -  \alpha \frac{\partial}{\partial w} J(\vec{\mathbf{w}},b)   \; \newline 
+ b &= b -  \alpha \frac{\partial}{\partial b}  J(\vec{\mathbf{w}},b) \newline
+\rbrace & 
+\end{align*}
+$$
+
+* When we substitute using the definition of $J(w,b)$
+
+$$
+\begin{align*} 
+\text{repeat}& \lbrace \newline
+\;  w &= w -  \alpha \frac{\partial}{\partial w} \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(f_{w,b}(\mathbf{x}^{(i)}) \right)}   \; \newline 
+ b &= b -  \alpha \frac{\partial}{\partial b}  \frac{1}{2m} \sum\limits_{i=1}^{m}{\left(f_{w,b}(\mathbf{x}^{(i)}) \right)} \newline
+\rbrace & 
+\end{align*}
+$$
+
+* Calculating the gradient descent over very big training set (i.e. $m=100,000,000$) will be very slow.
+* The idea of mini-batch gradient descent is to not use all 100 million training examples on every single iteration through this loop. 
+    * Instead, we may pick a smaller number, let me call it $m'= 1,000$. 
+    * On every step, instead of using all 100 million examples, we would pick some subset of 1,000 or $m'$ examples.
+    * This inner term becomes $\frac{1}{2m'}$ and the sum $\sum\limits_{i=1}^{m'}$ examples. 
+    * Now each iteration through gradient descent requires looking only at the 1,000 rather than 100 million examples, and every step takes much less time and just leads to a more efficient algorithm.
+![Mini-batch](./images/mini-batch-01.jpg)
+##### Mini-batch Learning Algorithm
+![Mini-batch Learning Algorithm](./images/mini-batch-02.jpg)
+#### Soft Update
+* In the last step of the [Mini-batch Learning Algorithm](#mini-batch-learning-algorithm) we $\text{Set } Q = Q_{new}$. But it turns out that this can make a very abrupt change to $Q$.
+* If you train a new neural network to new, maybe just by chance is not a very good neural network. Maybe is even a little bit worse than the old one, then you just overwrote your $Q$ function with a potentially worse noisy neural network.
+* The **soft update** method helps to prevent $Q_{new}$ through just one unlucky step getting worse.
+* To apply Soft Update, we update the neural network parameters as:
+
+$$
+\begin{align*}
+\mathbf{w} & = {\color{red}0.01} \mathbf{w}_{new} + {\color{red}0.99} \mathbf{w} \newline
+b &= {\color{red}0.01} b_{new} + {\color{red}0.99} b
+\end{align*}
+$$
+
+### The state of reinforcement learning
+#### Limitation of Reinforcement Learning
+* Much easier to get to work in a simulation than a real robot.
+* Far fewer applications than supervised and unsupervised learning.
+* But, exciting research direction with potential for future applications.
+
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
