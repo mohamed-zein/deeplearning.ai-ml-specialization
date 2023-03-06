@@ -43,6 +43,9 @@
 	"remoteUser": "jovyan",
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {},
-		"ghcr.io/guiyomh/features/vim:0": {}
+		"ghcr.io/guiyomh/features/vim:0": {},
+		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+			"packages": "xvfb"
+		}
 	}
 }

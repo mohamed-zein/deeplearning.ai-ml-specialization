@@ -1,5 +1,7 @@
 name: base
 channels:
+  - plotly
+  - cogsci
   - defaults
   - conda-forge
 dependencies:
@@ -7,3 +9,11 @@ dependencies:
   - pylint
   - pydot
   - py-xgboost
+  - tabulate
+  - plotly
+  - gym
+  - pyvirtualdisplay
+  - box2d-py
+  - pygame
+  - imageio
+  - imageio-ffmpeg
