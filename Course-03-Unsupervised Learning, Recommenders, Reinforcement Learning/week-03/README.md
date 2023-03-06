@@ -225,8 +225,8 @@ $$
 
 $$
 \begin{align*}
-\mathbf{w} & = {\color{red}0.01} \mathbf{w}_{new} + {\color{red}0.99} \mathbf{w} \newline
-b &= {\color{red}0.01} b_{new} + {\color{red}0.99} b
+\mathbf{w} & = 0.01 \mathbf{w}_{new} + 0.99 \mathbf{w} \newline
+b &= 0.01 b_{new} + 0.99 b
 \end{align*}
 $$
 
@@ -235,5 +235,8 @@ $$
 * Much easier to get to work in a simulation than a real robot.
 * Far fewer applications than supervised and unsupervised learning.
 * But, exciting research direction with potential for future applications.
+
+
+[Assignment: Reinforcement Learning](./assignment/C3_W3_A1_Assignment.ipynb)
 
 [<<Previous](../week-02/README.md) | [Next>>](../README.md)
